@@ -1,0 +1,2 @@
+2020-08-12 15:23:24,267 INFO  [TC_01_Login] ----------OPEN BROWSER---------- 
+2020-08-12 15:23:46,670 INFO  [TC_01_Login] Step: 1--> Login with email: thuongnhansohuu1@gmail.com 
