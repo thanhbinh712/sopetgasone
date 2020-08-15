@@ -1,6 +1,6 @@
 package pagesUI;
 
-public class CreateAccountPageUI {
+public class CreateDistributionAgencyPage {
 	public static final String CREATE_FACTORYCHILD_BUTTON = "//button[@class='btn btn-sm btn-create']";
 	public static final String EMAIL_TEXTBOX = "//input[@id='email']";
 	public static final String NAME_TEXTBOX = "//input[@id='name']";

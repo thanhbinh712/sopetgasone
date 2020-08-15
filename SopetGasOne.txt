@@ -1,25 +1,27 @@
-[INFO] 2020-08-15 20:29:18,854 [User_01_LoginAndCreateUser] ----------OPEN BROWSER---------- 
-[INFO] 2020-08-15 20:29:31,957 [User_01_LoginAndCreateUser] ----------LOGIN FAILED---------- 
-[INFO] 2020-08-15 20:29:31,964 [User_01_LoginAndCreateUser] TC_User_01_TNSHLoginfailed - Step 01 --> Input invalid email 
-[INFO] 2020-08-15 20:29:32,736 [User_01_LoginAndCreateUser] TC_User_01_TNSHLoginfailed - Step 02 --> Input invalid password 
-[INFO] 2020-08-15 20:29:32,988 [User_01_LoginAndCreateUser] TC_User_01_TNSHLoginfailed - Step 03 --> Click Button Login 
-[INFO] 2020-08-15 20:29:33,245 [User_01_LoginAndCreateUser] TC_User_01_TNSHLoginfailed - Step 04 --> Verify login failed 
-[INFO] 2020-08-15 20:29:33,340 [User_01_LoginAndCreateUser] **********************LOGIN FAILED***************** 
-[INFO] 2020-08-15 20:29:33,341 [User_01_LoginAndCreateUser] **********************TC01***************** 
-[INFO] 2020-08-15 20:29:33,354 [User_01_LoginAndCreateUser] ----------LOGIN---------- 
-[INFO] 2020-08-15 20:29:33,355 [User_01_LoginAndCreateUser] TC_User_02_TNSHLoginSuccess - Step 01 --> Clear old email 
-[INFO] 2020-08-15 20:29:33,531 [User_01_LoginAndCreateUser] TC_User_02_TNSHLoginSuccess - Step 02 --> Input valid email 
-[INFO] 2020-08-15 20:29:33,933 [User_01_LoginAndCreateUser] TC_User_02_TNSHLoginSuccess - Step 03 --> Clear old password 
-[INFO] 2020-08-15 20:29:34,038 [User_01_LoginAndCreateUser] TC_User_02_TNSHLoginSuccess - Step 04 --> Input valid password 
-[INFO] 2020-08-15 20:29:34,232 [User_01_LoginAndCreateUser] TC_User_02_TNSHLoginSuccess - Step 05 --> Click Button Login 
-[INFO] 2020-08-15 20:29:34,319 [User_01_LoginAndCreateUser] **********************LOGIN SUCCESS***************** 
-[INFO] 2020-08-15 20:29:34,319 [User_01_LoginAndCreateUser] **********************TC01***************** 
-[INFO] 2020-08-15 20:29:34,995 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 01 --> Click to Bussiness MenuLink 
-[INFO] 2020-08-15 20:29:37,388 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 02 --> Click to FactoryChild MenuLink 
-[INFO] 2020-08-15 20:29:37,999 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 03 --> Click to Create button 
-[INFO] 2020-08-15 20:29:38,221 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 04 --> Fill to email textbox 
-[INFO] 2020-08-15 20:29:39,267 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 05 --> Fill to name textbox 
-[INFO] 2020-08-15 20:29:39,528 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 06 --> Fill to code textbox 
-[INFO] 2020-08-15 20:29:39,750 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 07 --> Fill to code textbox 
-[INFO] 2020-08-15 20:29:40,204 [User_01_LoginAndCreateUser] TC_User_01_CreateFactoryChild - Step 08 --> Click to Save Button 
-[INFO] 2020-08-15 20:29:40,381 [User_01_LoginAndCreateUser] **********************TC01***************** 
+[INFO] 2020-08-16 01:06:02,966 [User_01_LoginAndCreateUser] 	**********************  OPEN BROWSER  ******************      
+[INFO] 2020-08-16 01:06:16,424 [User_01_LoginAndCreateUser] **************** TC01 - LOGIN WITH INVALID EMAIL  **************** 
+[INFO] 2020-08-16 01:06:16,439 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email 
+[INFO] 2020-08-16 01:06:17,234 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password 
+[INFO] 2020-08-16 01:06:17,670 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button 
+[INFO] 2020-08-16 01:06:17,967 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed 
+[INFO] 2020-08-16 01:06:18,097 [User_01_LoginAndCreateUser] **************** TC02 - LOGIN WITH INVALID PASSWORD  **************** 
+[INFO] 2020-08-16 01:06:18,379 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email 
+[INFO] 2020-08-16 01:06:18,776 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password 
+[INFO] 2020-08-16 01:06:19,046 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button 
+[INFO] 2020-08-16 01:06:19,147 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed 
+[INFO] 2020-08-16 01:06:19,254 [User_01_LoginAndCreateUser] 
+ 
+[INFO] 2020-08-16 01:06:19,258 [User_01_LoginAndCreateUser] ************* TC03 - LOGIN WITH VALID EMAIL & PASSWORD  ************** 
+[INFO] 2020-08-16 01:06:19,539 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 01 --> Input valid email 
+[INFO] 2020-08-16 01:06:19,908 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 02 --> Input valid password 
+[INFO] 2020-08-16 01:06:20,124 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 03 --> Click Button Login 
+[INFO] 2020-08-16 01:06:20,234 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login success 
+[INFO] 2020-08-16 01:06:23,831 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 01 --> Click to Bussiness MenuLink 
+[INFO] 2020-08-16 01:06:24,321 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 02 --> Click to FactoryChild MenuLink 
+[INFO] 2020-08-16 01:06:24,753 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 03 --> Click to Create button 
+[INFO] 2020-08-16 01:06:24,997 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 04 --> Fill to email textbox 
+[INFO] 2020-08-16 01:06:26,156 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 05 --> Fill to name textbox 
+[INFO] 2020-08-16 01:06:26,499 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 06 --> Fill to code textbox 
+[INFO] 2020-08-16 01:06:26,773 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 07 --> Fill to code textbox 
+[INFO] 2020-08-16 01:06:27,477 [User_01_LoginAndCreateUser] TC_User_04_CreateCustomerAccount - Step 08 --> Click to Save Button 
+[INFO] 2020-08-16 01:06:27,661 [User_01_LoginAndCreateUser] **********************TC01***************** 
