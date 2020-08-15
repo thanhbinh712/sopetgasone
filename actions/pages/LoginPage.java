@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import commons.PageFactoryManager;
+import pagesUI.HomePageUI;
 import pagesUI.LoginPageUI;
 
 public class LoginPage extends AbstractPage{
@@ -17,10 +19,10 @@ public class LoginPage extends AbstractPage{
 		return getCurrentUrl(driver);
 	}
 	
-	public void inputToUsernameTextbox(String userID) {
+	public void inputToEmailTextbox(String email) {
 		waitForControlVisible(driver, LoginPageUI.EMAIL_TXT);
-		sendKeysToElement(driver, LoginPageUI.EMAIL_TXT, userID);
-		log.info("sendkeys successfully - " + userID);
+		sendKeysToElement(driver, LoginPageUI.EMAIL_TXT, email);
+		log.info("sendkeys successfully - " + email);
 	}
 	
 	public void inputToPasswordTextbox(String password) {
@@ -28,8 +30,24 @@ public class LoginPage extends AbstractPage{
 		sendKeysToElement(driver, LoginPageUI.PASSWORD_TXT, password);
 	}
 	
-	public void clickToLoginButton() {
-		waitForControlVisible(driver, LoginPageUI.LOGIN_BUTTON);
+	public HomePage clickToLoginButton() {
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageFactoryManager.getHomePage(driver);
 	}
+	
+	public String getLoginFailedMessage() {
+		waitForControlVisible(driver, LoginPageUI.LOGINFAILED_MESSAGE);
+		return getTextElement(driver, LoginPageUI.LOGINFAILED_MESSAGE);
+	}
+	
+	public void clearToEmailTextbox() {
+		waitForControlVisible(driver, LoginPageUI.EMAIL_TXT);
+		clearToElement(driver, LoginPageUI.EMAIL_TXT);
+	}
+	
+	public void clearToPasswordTextbox() {
+		waitForControlVisible(driver, LoginPageUI.PASSWORD_TXT);
+		clearToElement(driver, LoginPageUI.PASSWORD_TXT);
+	}
+	
 }

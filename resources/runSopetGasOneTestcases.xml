@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
-  <test name="Test">
-    <classes>
-      <class name="vn.sopetgasone.user.TC_01_Login"/>
-      <class name="vn.sopetgasone.user.TC_02_CreateAccount"/>
-    </classes>
-  </test>
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener
+			class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="Test">
+		<classes>
+			<class name="vn.sopetgasone.user.User_01_LoginAndCreateUser" />
+		</classes>
+	</test>
 </suite> 

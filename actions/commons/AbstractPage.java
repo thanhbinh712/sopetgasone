@@ -127,11 +127,4 @@ public class AbstractPage extends AbstractTest{
 			return null;
 		}
 	}
-	
-	public void highlightElement(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].style.border='6px groove red'", element);
-	}
-	
-	
 }
