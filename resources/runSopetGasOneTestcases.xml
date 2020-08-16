@@ -7,9 +7,15 @@
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<test name="Test">
+	<test name="Test01">
 		<classes>
 			<class name="vn.sopetgasone.user.User_01_LoginAndCreateUser" />
+		</classes>
+	</test>
+	
+	<test name="Test02">
+		<classes>
+			<class name="vn.sopetgasone.product.Product_01_CreateCylinder" />
 		</classes>
 	</test>
 </suite> 

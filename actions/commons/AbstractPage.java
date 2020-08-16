@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.DistributionAgencyPage;
+import pages.CreateCylinderPage;
 import pagesUI.AbstractPageUI;
 
 public class AbstractPage extends AbstractTest{
@@ -136,6 +137,13 @@ public class AbstractPage extends AbstractTest{
 		}
 	}
 	
+	public void selectedItemDropdownDiv(WebDriver driver, String locator, String text) {
+		WebElement divClick = driver.findElement(By.xpath(locator));
+		divClick.click();
+		Select select = new Select(divClick);
+		select.selectByVisibleText(text);
+	}
+	
 //===================== OPEN MENU PAGE =====================
 	public DistributionAgencyPage openDistriButionAgencyPage(WebDriver driver) {
 		waitForControlVisible(driver, pagesUI.HomePageUI.BUSSINESS_MENULINK);
@@ -147,5 +155,11 @@ public class AbstractPage extends AbstractTest{
 		return PageFactoryManager.getDistributionAgencyPage(driver);
 	}
 	
-	
+	public CreateCylinderPage openCreateCylinderPage(WebDriver driver) {
+		waitForControlVisible(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
+		waitForControlVisible(driver, pagesUI.ProductPageUI.CREATE_CYLINDER_BUTTON);
+		clickToElement(driver, pagesUI.ProductPageUI.CREATE_CYLINDER_BUTTON);
+		return PageFactoryManager.getCreateCylinderPage(driver);
+	}
 }

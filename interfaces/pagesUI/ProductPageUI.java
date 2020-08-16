@@ -12,6 +12,5 @@ public class ProductPageUI {
 	public static final String RESET_BUTTON = "//body/div[@id='root']/div/main[@id='mainContent']/div/div[@id='import-product']/div/div/div/form/div/div/div[1]/div[1]/div[1]/input[1]";
 	public static final String CYLINDERTYPE_DROPDOWN = "//body/div[@id='root']/div/main[@id='mainContent']/div/div[@id='import-product']/div/div/div/form/div/div[1]/div[2]/div[1]/div[1]";
 	public static final String BRAND_DROPDOWN = "//body/div[@id='root']/div/main[@id='mainContent']/div/div[@id='import-product']/div/div/div/form/div/div/div/div/div/div/div[1]";
-
-		 
+	
 }

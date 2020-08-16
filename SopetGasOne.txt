@@ -1,49 +1,13 @@
-[INFO] 2020-08-16 12:30:45,978 [User_01_LoginAndCreateUser] 	**********************  OPEN BROWSER  ******************      
-[INFO] 2020-08-16 12:31:05,066 [User_01_LoginAndCreateUser] **************** TC01 - LOGIN WITH INVALID EMAIL  **************** 
-[INFO] 2020-08-16 12:31:05,076 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email 
-[INFO] 2020-08-16 12:31:05,849 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password 
-[INFO] 2020-08-16 12:31:06,095 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button 
-[INFO] 2020-08-16 12:31:06,276 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed 
-[INFO] 2020-08-16 12:31:06,413 [User_01_LoginAndCreateUser] **************** TC02 - LOGIN WITH INVALID PASSWORD  **************** 
-[INFO] 2020-08-16 12:31:06,757 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email 
-[INFO] 2020-08-16 12:31:07,236 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password 
-[INFO] 2020-08-16 12:31:07,534 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button 
-[INFO] 2020-08-16 12:31:07,641 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed 
-[INFO] 2020-08-16 12:31:07,748 [User_01_LoginAndCreateUser] ************* TC03 - LOGIN WITH VALID EMAIL & PASSWORD  ************** 
-[INFO] 2020-08-16 12:31:07,984 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 01 --> Input valid email 
-[INFO] 2020-08-16 12:31:08,314 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 02 --> Input valid password 
-[INFO] 2020-08-16 12:31:08,514 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 03 --> Click Button Login 
-[INFO] 2020-08-16 12:31:08,603 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login success 
-[INFO] 2020-08-16 12:31:13,297 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
-[INFO] 2020-08-16 12:31:13,297 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
-[INFO] 2020-08-16 12:31:14,757 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button 
-[INFO] 2020-08-16 12:31:15,121 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textboxnhahange@gmail.com 
-[INFO] 2020-08-16 12:31:16,083 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox Nhà hàng B 
-[INFO] 2020-08-16 12:31:16,352 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox NH0011 
-[INFO] 2020-08-16 12:31:16,559 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox Nhà hàng B 
-[INFO] 2020-08-16 12:31:16,812 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox Quận 9 
-[INFO] 2020-08-16 12:31:17,032 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 08 --> Choose group Nhóm thực tế 
-[INFO] 2020-08-16 12:31:17,332 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child 
-[INFO] 2020-08-16 12:31:17,510 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button 
-[INFO] 2020-08-16 12:31:20,704 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
-[INFO] 2020-08-16 12:31:20,709 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
-[INFO] 2020-08-16 12:31:21,914 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button 
-[INFO] 2020-08-16 12:31:22,214 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textboxtoanhaa@gmail.com 
-[INFO] 2020-08-16 12:31:22,715 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox Tòa nhà A 
-[INFO] 2020-08-16 12:31:22,994 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox TN006 
-[INFO] 2020-08-16 12:31:23,168 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox Tòa nhà A 
-[INFO] 2020-08-16 12:31:23,458 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox Quận 1 
-[INFO] 2020-08-16 12:31:23,715 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 08 --> Choose group Nhóm không tính 
-[INFO] 2020-08-16 12:31:23,986 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child 
-[INFO] 2020-08-16 12:31:24,182 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button 
-[INFO] 2020-08-16 12:31:27,364 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
-[INFO] 2020-08-16 12:31:27,364 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
-[INFO] 2020-08-16 12:31:28,632 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button 
-[INFO] 2020-08-16 12:31:29,011 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textboxnhahange@gmail.com 
-[INFO] 2020-08-16 12:31:29,414 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox Nhà hàng D 
-[INFO] 2020-08-16 12:31:29,685 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox NH0012 
-[INFO] 2020-08-16 12:31:29,906 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox Nhà hàng D 
-[INFO] 2020-08-16 12:31:30,144 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox Quận 9 
-[INFO] 2020-08-16 12:31:30,344 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 08 --> Choose group Nhóm thực tế 
-[INFO] 2020-08-16 12:31:30,569 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child 
-[INFO] 2020-08-16 12:31:30,745 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button 
+[INFO] 2020-08-16 23:27:47,909 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-16 23:27:47,912 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-16 23:27:52,214 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608001 
+[INFO] 2020-08-16 23:27:53,910 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Thường 
+[INFO] 2020-08-16 23:27:54,340 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Petro 
+[INFO] 2020-08-16 23:27:54,691 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: POL 
+[INFO] 2020-08-16 23:27:55,052 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.9 
+[INFO] 2020-08-16 23:27:55,413 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SAIGON PETRO 
+[INFO] 2020-08-16 23:27:55,715 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
+[INFO] 2020-08-16 23:28:00,997 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-16 23:28:00,998 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-16 23:28:02,313 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-16 23:28:02,314 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 

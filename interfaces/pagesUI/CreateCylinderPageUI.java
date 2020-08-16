@@ -1,0 +1,13 @@
+package pagesUI;
+
+public class CreateCylinderPageUI {
+	public static final String CYLINDERCODE_TEXTBOX = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//input[@name='serial']";
+	public static final String CYLINDERTYPE_DROPDOWN = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//select[@id='cylinderType']";
+	public static final String COLOR_DROPDOWN = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//select[@id='color']";
+	public static final String VALVETYPE_DROPDOWN = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//select[@id='valve']";
+	public static final String WEIGHT_TEXTBOX = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//input[@id='weight']";
+	public static final String DATE_BOX = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//div//input[@id='checkedDate']";
+	public static final String DATEPICKER_BOX = "//div[@class='datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-bottom']";
+	public static final String BRAND_DROPDOWN = "//select[@name='manufacture']";
+	public static final String SAVE_BUTTON = "//div[@id='create-product']//form//button[1]";
+}

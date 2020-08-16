@@ -98,53 +98,54 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		verifyEquals("Thanh Bình Tester", nameUser);
 	}
 	
-	@DataProvider
-	public Object[][] getDataCreateCustomer(){
-		Object[][] data = ExcelUtils.getTestData("Create New Account");
-		return data;
-	}
-
-	@Test(dataProvider = "getDataCreateCustomer")
-	public void TC_User_04_CreateDistributionAgency(String email, String name, String code, String address, String group) throws Exception {
-		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
-		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button");
-		distributionAgencyPage.clickToCreateButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
-		emailNew = "factorychild" + randomNumber() + "@gmail.com";
-		distributionAgencyPage.InputToEmailTextbox(email);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
-		distributionAgencyPage.InputToNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
-		distributionAgencyPage.InputToCodeTextbox(code);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
-		distributionAgencyPage.InputToInvoiceNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
-		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 08 --> Choose group " + group);
-		distributionAgencyPage.selectGroup(group);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child");
-		distributionAgencyPage.clickToDeleteButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button");
-		distributionAgencyPage.clickToSaveButton();
-		
-		Thread.sleep(3000);
-	}
+//	@DataProvider
+//	public Object[][] getDataCreateCustomer(){
+//		Object[][] data = ExcelUtils.getTestData("Create New Account");
+//		return data;
+//	}
+//
+//	@Test(dataProvider = "getDataCreateCustomer")
+//	public void TC_User_04_CreateDistributionAgency(String email, String name, String code, String address, String group) throws Exception {
+//		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
+//		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button");
+//		distributionAgencyPage.clickToCreateButton();
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
+//		emailNew = "factorychild" + randomNumber() + "@gmail.com";
+//		distributionAgencyPage.InputToEmailTextbox(email);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
+//		distributionAgencyPage.InputToNameTextbox(name);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
+//		distributionAgencyPage.InputToCodeTextbox(code);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
+//		distributionAgencyPage.InputToInvoiceNameTextbox(name);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
+//		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 08 --> Choose group " + group);
+//		distributionAgencyPage.selectGroup(group);
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child");
+//		distributionAgencyPage.clickToDeleteButton();
+//		
+//		log.info("TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button");
+//		distributionAgencyPage.clickToSaveButton();
+//		
+//		Thread.sleep(3000);
+//	}
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		log.info("	**********************  CLOSE BROWSER  ******************     ");
+		closeBrowser();
 	}
 
 }
