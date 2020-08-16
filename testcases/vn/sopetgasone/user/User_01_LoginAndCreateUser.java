@@ -2,26 +2,26 @@ package vn.sopetgasone.user;
 
 import org.testng.annotations.Test;
 
-import com.github.javafaker.Faker;
-
 import commons.AbstractTest;
+import commons.ExcelUtils;
 import commons.PageFactoryManager;
-import pages.CreateAccountPage;
+import pages.DistributionAgencyPage;
 import pages.HomePage;
 import pages.LoginPage;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
 public class User_01_LoginAndCreateUser extends AbstractTest {
 	WebDriver driver;
-	String email, password, loginUrl, homePageUrl, emailNew, name, code, emailFailed, 
+	String emailI, password, loginUrl, homePageUrl, emailNew, name, code, emailFailed, 
 			passwordFailed, nameUser;
 
 	private LoginPage loginPage;
 	private HomePage homePage;
-	private CreateAccountPage createAccountPage;
+	private DistributionAgencyPage distributionAgencyPage;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -29,7 +29,7 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		driver = openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		loginUrl = loginPage.getLoginPageUrl();
-		email = "thanhbinhtester@dvs.vn";
+		emailI = "thanhbinhtester@dvs.vn";
 		password = "A123!@#";
 	}
 	
@@ -63,7 +63,7 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		loginPage.clearToPasswordTextbox();
 		
 		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email");
-		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToEmailTextbox(emailI);
 		
 		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password");
 		loginPage.inputToPasswordTextbox(passwordFailed);
@@ -85,7 +85,7 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		loginPage.clearToPasswordTextbox();
 		
 		log.info("TC_User_03_TradeOwnerLoginSuccess - Step 01 --> Input valid email");
-		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToEmailTextbox(emailI);
 		
 		log.info("TC_User_03_TradeOwnerLoginSuccess - Step 02 --> Input valid password");
 		loginPage.inputToPasswordTextbox(password);
@@ -97,37 +97,49 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		nameUser = homePage.getNameUser();
 		verifyEquals("Thanh Bình Tester", nameUser);
 	}
+	
+	@DataProvider
+	public Object[][] getDataCreateCustomer(){
+		Object[][] data = ExcelUtils.getTestData("Create New Account");
+		return data;
+	}
 
-	@Test
-	public void TC_User_04_CreateCustomerAccount() {
-		Faker faker = new Faker();
-		log.info("TC_User_04_CreateCustomerAccount - Step 01 --> Click to Bussiness MenuLink");
-		homePage.clickToBussinessMenuLink();
+	@Test(dataProvider = "getDataCreateCustomer")
+	public void TC_User_04_CreateDistributionAgency(String email, String name, String code, String address, String group) throws Exception {
+		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 02 --> Click to FactoryChild MenuLink");
-		createAccountPage = homePage.clickFactoryChildMenuLink();
+		log.info("TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
+		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 03 --> Click to Create button");
-		createAccountPage.clickToCreateButton();
+		log.info("TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button");
+		distributionAgencyPage.clickToCreateButton();
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 04 --> Fill to email textbox");
+		log.info("TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
 		emailNew = "factorychild" + randomNumber() + "@gmail.com";
-		createAccountPage.InputToEmailTextbox(emailNew);
+		distributionAgencyPage.InputToEmailTextbox(email);
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 05 --> Fill to name textbox");
-		createAccountPage.InputToNameTextbox(faker.name().fullName());
+		log.info("TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
+		distributionAgencyPage.InputToNameTextbox(name);
 		
-		code = "KHO" + randomNumber();
-		log.info("TC_User_04_CreateCustomerAccount - Step 06 --> Fill to code textbox");
-		createAccountPage.InputToCodeTextbox(code);
+		log.info("TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
+		distributionAgencyPage.InputToCodeTextbox(code);
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 07 --> Fill to code textbox");
-		createAccountPage.InputToAddressTextbox(faker.address().fullAddress());
+		log.info("TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
+		distributionAgencyPage.InputToInvoiceNameTextbox(name);
 		
-		log.info("TC_User_04_CreateCustomerAccount - Step 08 --> Click to Save Button");
-		createAccountPage.clickToSaveButton();
+		log.info("TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
+		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
 		
-		log.info("**********************TC01*****************");
+		log.info("TC_User_04_CreateDistributionAgency - Step 08 --> Choose group " + group);
+		distributionAgencyPage.selectGroup(group);
+		
+		log.info("TC_User_04_CreateDistributionAgency - Step 09 --> Click to delete child");
+		distributionAgencyPage.clickToDeleteButton();
+		
+		log.info("TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button");
+		distributionAgencyPage.clickToSaveButton();
+		
+		Thread.sleep(3000);
 	}
 
 	@AfterClass

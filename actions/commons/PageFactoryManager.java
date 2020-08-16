@@ -2,7 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
-import pages.CreateAccountPage;
+import pages.DistributionAgencyPage;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -10,7 +10,7 @@ public class PageFactoryManager {
 
 	private static LoginPage loginPage;
 	private static HomePage homePage;;
-	private static CreateAccountPage createAccountPage;
+	private static DistributionAgencyPage createAccountPage;
 	
 	
 	WebDriver driver;
@@ -29,9 +29,9 @@ public class PageFactoryManager {
 		return homePage;
 	}
 	
-	public static CreateAccountPage getCreateAccountPage(WebDriver driver) {
+	public static DistributionAgencyPage getDistributionAgencyPage(WebDriver driver) {
 		if(createAccountPage == null) {
-			return new CreateAccountPage(driver);
+			return new DistributionAgencyPage(driver);
 		}
 		return createAccountPage;
 	}

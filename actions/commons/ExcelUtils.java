@@ -37,14 +37,16 @@ public class ExcelUtils {
 			sheet = book.getSheet(sheetName);
 			
 			int count = 0;
-			Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+			Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()]; 
 			
 			try {
+				//System.out.println(sheet.getLastRowNum());
 				for(int i= 0;i<sheet.getLastRowNum();i++) {
 					for(int j = 0;j<sheet.getRow(0).getLastCellNum();j++) {
 						data[i][j] = sheet.getRow(i+1).getCell(j).toString();
+						//System.out.println(data[i][j]);
 					}
-					count += 1;
+					count++;
 				}
 			}catch (Exception e){
 				

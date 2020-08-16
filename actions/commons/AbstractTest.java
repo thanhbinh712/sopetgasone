@@ -37,53 +37,53 @@ public class AbstractTest {
 		return number;
 	}
 	
-	protected boolean verifyPassed(boolean condition, boolean flag) {
-		boolean pass = true;
-		if(flag == false) {
-			try {
-				if(condition == true) 
-					log.info("[PASS]");
-				else
-					log.info("[FAILED]");
-				Assert.assertTrue(condition);
-			}catch(Throwable e) {
-				pass = false;
-				Reporter.getCurrentTestResult().setThrowable(e);
-			}
-		}
-		else {
-			Assert.assertTrue(condition);
-		}
-		return pass;
-	}
-	
-	protected boolean verifyTrue(boolean condition) {
-		return verifyPassed(condition, false);
-	}
-	
-	protected boolean verifyFailed(boolean condition, boolean flag) {
-		boolean pass = true;
-		if(flag == false) {
-			try {
-				if(condition == false) 
-					log.info("[PASS]");
-				else
-					log.info("[FAILED]");
-				Assert.assertTrue(condition);
-			}catch(Throwable e) {
-				pass = false;
-				Reporter.getCurrentTestResult().setThrowable(e);
-			}
-		}
-		else {
-			Assert.assertTrue(condition);
-		}
-		return pass;
-	}
-	
-	protected boolean verifyFalse(boolean condition) {
-		return verifyFailed(condition, false);
-	}
+//	protected boolean verifyPassed(boolean condition, boolean flag) {
+//		boolean pass = true;
+//		if(flag == false) {
+//			try {
+//				if(condition == true) 
+//					log.info("[PASS]");
+//				else
+//					log.info("[FAILED]");
+//				Assert.assertTrue(condition);
+//			}catch(Throwable e) {
+//				pass = false;
+//				Reporter.getCurrentTestResult().setThrowable(e);
+//			}
+//		}
+//		else {
+//			Assert.assertTrue(condition);
+//		}
+//		return pass;
+//	}
+//	
+//	protected boolean verifyTrue(boolean condition) {
+//		return verifyPassed(condition, false);
+//	}
+//	
+//	protected boolean verifyFailed(boolean condition, boolean flag) {
+//		boolean pass = true;
+//		if(flag == false) {
+//			try {
+//				if(condition == false) 
+//					log.info("[PASS]");
+//				else
+//					log.info("[FAILED]");
+//				Assert.assertTrue(condition);
+//			}catch(Throwable e) {
+//				pass = false;
+//				Reporter.getCurrentTestResult().setThrowable(e);
+//			}
+//		}
+//		else {
+//			Assert.assertTrue(condition);
+//		}
+//		return pass;
+//	}
+//	
+//	protected boolean verifyFalse(boolean condition) {
+//		return verifyFailed(condition, false);
+//	}
 	
 	protected boolean verifyEquals(Object actual, Object expected, boolean flag) {
 		boolean pass = true;

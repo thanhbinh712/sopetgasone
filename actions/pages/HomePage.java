@@ -23,10 +23,10 @@ public class HomePage extends AbstractPage{
 		clickToElement(driver, HomePageUI.BUSSINESS_MENULINK);
 	}
 	
-	public CreateAccountPage clickFactoryChildMenuLink() {
+	public DistributionAgencyPage clickFactoryChildMenuLink() {
 		waitForControlVisible(driver, HomePageUI.FACTORYCHILD_MENULINK);
 		clickToElement(driver, HomePageUI.FACTORYCHILD_MENULINK);
-		return PageFactoryManager.getCreateAccountPage(driver);
+		return PageFactoryManager.getDistributionAgencyPage(driver);
 	}
 	
 	public String getNameUser() {

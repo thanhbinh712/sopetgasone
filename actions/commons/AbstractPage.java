@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pages.DistributionAgencyPage;
+import pagesUI.AbstractPageUI;
+
 public class AbstractPage extends AbstractTest{
 	WebDriver driver;
 	
@@ -53,6 +56,11 @@ public class AbstractPage extends AbstractTest{
 	public void selectedItemDropdown(WebDriver driver, String locator, String value) {
 		Select select = new Select(driver.findElement(By.xpath(locator)));
 		select.selectByVisibleText(value);
+	}
+	
+	public void selectedItemDropdownByIndex(WebDriver driver, String locator, Integer index) {
+		Select select = new Select(driver.findElement(By.xpath(locator)));
+		select.selectByIndex(index);
 	}
 	
 	public String getFirstSelectedItem(WebDriver driver, String locator) {
@@ -129,5 +137,15 @@ public class AbstractPage extends AbstractTest{
 	}
 	
 //===================== OPEN MENU PAGE =====================
+	public DistributionAgencyPage openDistriButionAgencyPage(WebDriver driver) {
+		waitForControlVisible(driver, pagesUI.HomePageUI.BUSSINESS_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.BUSSINESS_MENULINK);
+		waitForControlVisible(driver, pagesUI.HomePageUI.CUSTOMER_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.CUSTOMER_MENULINK);
+		waitForControlVisible(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
+		return PageFactoryManager.getDistributionAgencyPage(driver);
+	}
+	
 	
 }
