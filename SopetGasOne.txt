@@ -1,13 +1,30 @@
-[INFO] 2020-08-16 23:27:47,909 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-16 23:27:47,912 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-16 23:27:52,214 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608001 
-[INFO] 2020-08-16 23:27:53,910 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Thường 
-[INFO] 2020-08-16 23:27:54,340 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Petro 
-[INFO] 2020-08-16 23:27:54,691 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: POL 
-[INFO] 2020-08-16 23:27:55,052 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.9 
-[INFO] 2020-08-16 23:27:55,413 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SAIGON PETRO 
-[INFO] 2020-08-16 23:27:55,715 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
-[INFO] 2020-08-16 23:28:00,997 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-16 23:28:00,998 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-16 23:28:02,313 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-16 23:28:02,314 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-17 02:43:19,910 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-17 02:43:19,911 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-17 02:43:24,333 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608004 
+[INFO] 2020-08-17 02:43:25,034 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Thường 
+[INFO] 2020-08-17 02:43:25,441 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Petro 
+[INFO] 2020-08-17 02:43:25,743 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: POL 
+[INFO] 2020-08-17 02:43:26,062 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.9 
+[INFO] 2020-08-17 02:43:26,330 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 29-Aug-2020 
+[INFO] 2020-08-17 02:43:26,979 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SAIGON PETRO 
+[INFO] 2020-08-17 02:43:27,551 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
+[INFO] 2020-08-17 02:43:32,885 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-17 02:43:32,885 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-17 02:43:37,189 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608005 
+[INFO] 2020-08-17 02:43:38,154 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Compact 
+[INFO] 2020-08-17 02:43:38,473 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Cam 
+[INFO] 2020-08-17 02:43:38,790 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: Compact 
+[INFO] 2020-08-17 02:43:39,105 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.10 
+[INFO] 2020-08-17 02:43:39,400 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 01-Sep-2020 
+[INFO] 2020-08-17 02:43:39,963 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SOPET Gas One 
+[INFO] 2020-08-17 02:43:40,445 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
+[INFO] 2020-08-17 02:43:45,710 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
+[INFO] 2020-08-17 02:43:45,711 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
+[INFO] 2020-08-17 02:43:46,420 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608006 
+[INFO] 2020-08-17 02:43:47,341 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 45 KG 
+[INFO] 2020-08-17 02:43:47,630 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: VT 
+[INFO] 2020-08-17 02:43:47,906 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: 1 Van 
+[INFO] 2020-08-17 02:43:48,187 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.11 
+[INFO] 2020-08-17 02:43:48,708 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 04-Sep-2020 
+[INFO] 2020-08-17 02:43:49,387 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: GAS SOUTH 
+[INFO] 2020-08-17 02:43:49,824 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  

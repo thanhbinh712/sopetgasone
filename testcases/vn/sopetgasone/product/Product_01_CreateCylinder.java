@@ -42,7 +42,7 @@ public class Product_01_CreateCylinder extends AbstractTest  {
 	 
 	
 	 @Test(dataProvider = "getDataCreateCylinder")
-	 public void TC_Product_01_CreateProduct(String code, String type, String color, String valveType, String weight, String brand) throws Exception {
+	 public void TC_Product_01_CreateProduct(String code, String type, String color, String valveType, String weight, String verificationDate, String brand) throws Exception {
 		 log.info("************* TC01 - CREATE PRODUCT  **************");
 		 log.info("TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page");
 		 createCylinderPage = homePage.openCreateCylinderPage(driver);
@@ -62,10 +62,13 @@ public class Product_01_CreateCylinder extends AbstractTest  {
 		 log.info("TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: " + weight);
 		 createCylinderPage.sendKeyToWeight(weight);
 		 
-		 log.info("TC_Product_01_CreateProduct - Step 07 --> Select Brand: " + brand);
+		 log.info("TC_Product_01_CreateProduct - Step 07 --> Choose verification date: " + verificationDate);
+		 createCylinderPage.sendKeyToVerifycationDate(verificationDate);
+		 
+		 log.info("TC_Product_01_CreateProduct - Step 08 --> Select Brand: " + brand);
 		 createCylinderPage.selectBrand(brand);
 
-		 log.info("TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder: ");
+		 log.info("TC_Product_01_CreateProduct - Step 09 --> Click to Upload Cylinder Button");
 		 createCylinderPage.clickToUploadButton();
 		 
 		 Thread.sleep(5000);

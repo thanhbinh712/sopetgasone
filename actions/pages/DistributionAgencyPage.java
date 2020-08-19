@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 import pagesUI.DistributionAgencyPageUI;
+import pagesUI.LoginPageUI;
 
 public class DistributionAgencyPage extends AbstractPage {
 
@@ -64,4 +65,13 @@ public class DistributionAgencyPage extends AbstractPage {
 		clickToElement(driver, DistributionAgencyPageUI.DELETE_CHILD_BUTTON);
 	}
 	
+	public String createSuccessMessage() {
+		waitForControlVisible(driver, DistributionAgencyPageUI.CREATE_SUCCESS_MESSAGE);
+		return getTextElement(driver, DistributionAgencyPageUI.CREATE_SUCCESS_MESSAGE);
+	}
+	
+	public void clickToCloseButton() {
+		waitForControlVisible(driver, DistributionAgencyPageUI.CLOSE_BUTTON);
+		clickToElement(driver, DistributionAgencyPageUI.CLOSE_BUTTON);
+	}
 }

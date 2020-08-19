@@ -158,8 +158,8 @@ public class AbstractPage extends AbstractTest{
 	public CreateCylinderPage openCreateCylinderPage(WebDriver driver) {
 		waitForControlVisible(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
 		clickToElement(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
-		waitForControlVisible(driver, pagesUI.ProductPageUI.CREATE_CYLINDER_BUTTON);
-		clickToElement(driver, pagesUI.ProductPageUI.CREATE_CYLINDER_BUTTON);
+		waitForControlVisible(driver, pagesUI.CreateCylinderPageUI.CREATE_CYLINDER_BUTTON);
+		clickToElement(driver, pagesUI.CreateCylinderPageUI.CREATE_CYLINDER_BUTTON);
 		return PageFactoryManager.getCreateCylinderPage(driver);
 	}
 }

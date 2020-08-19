@@ -53,6 +53,7 @@ public class CreateCylinderPage extends AbstractPage {
 	
 	public void selectBrand(String brand) {
 		waitForControlVisible(driver, CreateCylinderPageUI.BRAND_DROPDOWN);
+		clickToElement(driver, CreateCylinderPageUI.BRAND_DROPDOWN);
 		selectedItemDropdown(driver, CreateCylinderPageUI.BRAND_DROPDOWN, brand);
 	}
 	

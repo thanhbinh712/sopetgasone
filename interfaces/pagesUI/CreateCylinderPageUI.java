@@ -1,6 +1,7 @@
 package pagesUI;
 
 public class CreateCylinderPageUI {
+	public static final String CREATE_CYLINDER_BUTTON = "//button[@class='btn btn-sm btn-primary kiemdinh']";
 	public static final String CYLINDERCODE_TEXTBOX = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//input[@name='serial']";
 	public static final String CYLINDERTYPE_DROPDOWN = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//select[@id='cylinderType']";
 	public static final String COLOR_DROPDOWN = "//div[@id='create-product']//div//div//div//form//div//div//div//div//div//select[@id='color']";
@@ -10,4 +11,5 @@ public class CreateCylinderPageUI {
 	public static final String DATEPICKER_BOX = "//div[@class='datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-bottom']";
 	public static final String BRAND_DROPDOWN = "//select[@name='manufacture']";
 	public static final String SAVE_BUTTON = "//div[@id='create-product']//form//button[1]";
+
 }

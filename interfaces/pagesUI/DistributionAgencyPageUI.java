@@ -16,4 +16,5 @@ public class DistributionAgencyPageUI {
 	public static final String INVOICE_ADDRESS_TEXTBOX = "//input[@id='invoiceAddress']";
 	public static final String GROUP_CUSTOMER_DROPDOWN = "//select[@id='groupCustomer']";
 	public static final String DELETE_CHILD_BUTTON = "//button[@class='btn btn-danger']";
+	public static final String CREATE_SUCCESS_MESSAGE = "//div[contains(text(),'Tạo mới thành công!')]";
 }

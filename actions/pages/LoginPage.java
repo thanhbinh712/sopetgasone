@@ -11,6 +11,7 @@ public class LoginPage extends AbstractPage{
 	
 	WebDriver driver;
 	
+	//Page Object constructor which passes the driver context forward
 	public LoginPage(WebDriver driver_) {
 		this.driver = driver_;
 	}
