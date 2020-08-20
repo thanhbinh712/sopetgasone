@@ -17,4 +17,8 @@ public class DistributionAgencyPageUI {
 	public static final String GROUP_CUSTOMER_DROPDOWN = "//select[@id='groupCustomer']";
 	public static final String DELETE_CHILD_BUTTON = "//button[@class='btn btn-danger']";
 	public static final String CREATE_SUCCESS_MESSAGE = "//div[contains(text(),'Tạo mới thành công!')]";
+	public static final String CHILD_ID_TEXTBOX = "//input[@id='agencyId']";
+	public static final String CHILD_NAME_TEXTBOX = "//input[@id='agencyName']";
+	public static final String CHILD_ADDRESS_TEXTBOX = "//input[@id='agencyAddress']";
+	public static final String ADD_CHILD_BUTTON = "//button[@class='btn btn-success']";
 }

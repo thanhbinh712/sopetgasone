@@ -20,7 +20,5 @@ public class CreateOrderPageUI {
 	public static final String PLUS_ICON = "//a[@id='duy']";
 	public static final String COLOR_DROPDOWN = "//body/div[@id='root']/div/main[@id='mainContent']/div/div/div/div/div/form/div[3]/div[1]/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]";
 	public static final String GRAY_COLOR = "//li[contains(text(),'Xám')]";
-	public static final String NOTIFICATION_STATUS_MESSAGE = "";
-	public static final String NOTIFICATION_STATUS_MESSAGE = "";
-	public static final String NOTIFICATION_STATUS_MESSAGE = "";
+	public static final String NUMBER_CYLINDER_TEXTBOX = "//input[@id='countOrder']";
 }

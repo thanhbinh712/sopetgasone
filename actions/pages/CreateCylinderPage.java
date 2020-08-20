@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,11 @@ public class CreateCylinderPage extends AbstractPage {
 	public void clickToUploadButton() {
 		waitForControlVisible(driver, CreateCylinderPageUI.SAVE_BUTTON);
 		clickToElement(driver, CreateCylinderPageUI.SAVE_BUTTON);
+	}
+	
+	public void clickToCloseButton() {
+		waitForControlVisible(driver, CreateCylinderPageUI.CLOSE_BUTTON);
+		clickToElement(driver, CreateCylinderPageUI.CLOSE_BUTTON);
 	}
 	
 	public void selectCylinderType(String type) {
@@ -62,4 +68,12 @@ public class CreateCylinderPage extends AbstractPage {
 		sendKeysToElement(driver, CreateCylinderPageUI.WEIGHT_TEXTBOX, weight);
 	}
 	
+	public void refreshPage() {
+		driver.navigate().refresh();
+	}
+	
+	public String getAlertText() {
+		Alert alert = driver.switchTo().alert();
+		return alert.getText();
+	}
 }

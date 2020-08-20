@@ -1,30 +1,36 @@
-[INFO] 2020-08-17 02:43:19,910 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-17 02:43:19,911 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-17 02:43:24,333 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608004 
-[INFO] 2020-08-17 02:43:25,034 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Thường 
-[INFO] 2020-08-17 02:43:25,441 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Petro 
-[INFO] 2020-08-17 02:43:25,743 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: POL 
-[INFO] 2020-08-17 02:43:26,062 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.9 
-[INFO] 2020-08-17 02:43:26,330 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 29-Aug-2020 
-[INFO] 2020-08-17 02:43:26,979 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SAIGON PETRO 
-[INFO] 2020-08-17 02:43:27,551 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
-[INFO] 2020-08-17 02:43:32,885 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-17 02:43:32,885 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-17 02:43:37,189 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608005 
-[INFO] 2020-08-17 02:43:38,154 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 12 KG Compact 
-[INFO] 2020-08-17 02:43:38,473 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: Cam 
-[INFO] 2020-08-17 02:43:38,790 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: Compact 
-[INFO] 2020-08-17 02:43:39,105 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.10 
-[INFO] 2020-08-17 02:43:39,400 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 01-Sep-2020 
-[INFO] 2020-08-17 02:43:39,963 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: SOPET Gas One 
-[INFO] 2020-08-17 02:43:40,445 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
-[INFO] 2020-08-17 02:43:45,710 [Product_01_CreateCylinder] ************* TC01 - CREATE PRODUCT  ************** 
-[INFO] 2020-08-17 02:43:45,711 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-17 02:43:46,420 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: TEST1608006 
-[INFO] 2020-08-17 02:43:47,341 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: Bình 45 KG 
-[INFO] 2020-08-17 02:43:47,630 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 04 --> Select Color: VT 
-[INFO] 2020-08-17 02:43:47,906 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: 1 Van 
-[INFO] 2020-08-17 02:43:48,187 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: 13.11 
-[INFO] 2020-08-17 02:43:48,708 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Choose verification date: 04-Sep-2020 
-[INFO] 2020-08-17 02:43:49,387 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 07 --> Select Brand: GAS SOUTH 
-[INFO] 2020-08-17 02:43:49,824 [Product_01_CreateCylinder] TC_Product_01_CreateProduct - Step 06 --> Click to Upload Cylinder:  
+[INFO] 2020-08-20 21:09:20,391 [User_01_LoginAndCreateUser] 	**********************  OPEN BROWSER  ******************      
+[INFO] 2020-08-20 21:09:42,613 [User_01_LoginAndCreateUser] **************** TC01 - LOGIN WITH INVALID EMAIL  **************** 
+[INFO] 2020-08-20 21:09:42,618 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email 
+[INFO] 2020-08-20 21:09:43,983 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password 
+[INFO] 2020-08-20 21:09:44,291 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button 
+[INFO] 2020-08-20 21:09:44,579 [User_01_LoginAndCreateUser] TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed 
+[INFO] 2020-08-20 21:09:44,705 [User_01_LoginAndCreateUser] **************** TC02 - LOGIN WITH INVALID PASSWORD  **************** 
+[INFO] 2020-08-20 21:09:44,998 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email 
+[INFO] 2020-08-20 21:09:45,392 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password 
+[INFO] 2020-08-20 21:09:45,715 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button 
+[INFO] 2020-08-20 21:09:45,819 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed 
+[INFO] 2020-08-20 21:09:45,899 [User_01_LoginAndCreateUser] ************* TC03 - LOGIN WITH VALID EMAIL & PASSWORD  ************** 
+[INFO] 2020-08-20 21:09:46,182 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 01 --> Input valid email 
+[INFO] 2020-08-20 21:09:46,503 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 02 --> Input valid password 
+[INFO] 2020-08-20 21:09:46,677 [User_01_LoginAndCreateUser] TC_User_03_TradeOwnerLoginSuccess - Step 03 --> Click Button Login 
+[INFO] 2020-08-20 21:09:46,760 [User_01_LoginAndCreateUser] TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login success 
+[INFO] 2020-08-20 21:09:51,115 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
+[INFO] 2020-08-20 21:09:51,115 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
+[INFO] 2020-08-20 21:09:52,612 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button 
+[INFO] 2020-08-20 21:09:53,177 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textboxdailyphanphoi180801@gmail.com 
+[INFO] 2020-08-20 21:09:53,610 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox Đại lý phân phối 1 
+[INFO] 2020-08-20 21:09:54,009 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox DLPP180801 
+[INFO] 2020-08-20 21:09:54,283 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox Đại lý phân phối 1 
+[INFO] 2020-08-20 21:09:54,670 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox Quận 9 
+[INFO] 2020-08-20 21:09:54,922 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 08 --> Choose group Nhóm thực tế 
+[INFO] 2020-08-20 21:09:55,282 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 09 --> Input to Child code: CDLPP180801 
+[INFO] 2020-08-20 21:09:55,754 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 10 --> Input to Child name: Chi nhánh DLPP 18/08 01 
+[INFO] 2020-08-20 21:09:56,273 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 11 --> Input to Child code: Bình Dương 
+[INFO] 2020-08-20 21:09:56,571 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 10 --> Click to Save Button 
+[INFO] 2020-08-20 21:10:01,797 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
+[INFO] 2020-08-20 21:10:01,798 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
+[INFO] 2020-08-20 21:10:03,319 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
+[INFO] 2020-08-20 21:10:03,319 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
+[INFO] 2020-08-20 21:10:04,601 [User_01_LoginAndCreateUser] ******************** TC04 - CREATE NEW CUSTOMER  ********************* 
+[INFO] 2020-08-20 21:10:04,602 [User_01_LoginAndCreateUser] TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page 
+[INFO] 2020-08-20 21:10:05,756 [User_01_LoginAndCreateUser] 	**********************  CLOSE BROWSER  ******************      

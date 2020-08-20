@@ -11,5 +11,5 @@ public class CreateCylinderPageUI {
 	public static final String DATEPICKER_BOX = "//div[@class='datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-bottom']";
 	public static final String BRAND_DROPDOWN = "//select[@name='manufacture']";
 	public static final String SAVE_BUTTON = "//div[@id='create-product']//form//button[1]";
-
+	public static final String CLOSE_BUTTON = "//div[@id='create-product']//div//div//div//button[contains(text(),'Đóng')]";
 }

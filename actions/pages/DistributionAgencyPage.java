@@ -74,4 +74,24 @@ public class DistributionAgencyPage extends AbstractPage {
 		waitForControlVisible(driver, DistributionAgencyPageUI.CLOSE_BUTTON);
 		clickToElement(driver, DistributionAgencyPageUI.CLOSE_BUTTON);
 	}
+	
+	public void InputToChildIDTextbox(String childID) {
+		waitForControlVisible(driver, DistributionAgencyPageUI.CHILD_ID_TEXTBOX);
+		sendKeysToElement(driver, DistributionAgencyPageUI.CHILD_ID_TEXTBOX, childID);
+	}
+	
+	public void InputToChildNameTextbox(String childName) {
+		waitForControlVisible(driver, DistributionAgencyPageUI.CHILD_NAME_TEXTBOX);
+		sendKeysToElement(driver, DistributionAgencyPageUI.CHILD_NAME_TEXTBOX, childName);
+	}
+	
+	public void InputToChildAddressTextbox(String childAddress) {
+		waitForControlVisible(driver, DistributionAgencyPageUI.CHILD_ADDRESS_TEXTBOX);
+		sendKeysToElement(driver, DistributionAgencyPageUI.CHILD_ADDRESS_TEXTBOX, childAddress);
+	}
+	
+	public void clickToAddChildButton() {
+		waitForControlVisible(driver, DistributionAgencyPageUI.ADD_CHILD_BUTTON);
+		clickToElement(driver, DistributionAgencyPageUI.ADD_CHILD_BUTTON);
+	}
 }
