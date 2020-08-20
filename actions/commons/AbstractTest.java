@@ -42,7 +42,7 @@ public class AbstractTest {
 		if(flag == false) {
 			try {
 				if(condition == true) 
-					log.info("[PASS]");
+					log.info("[PASSED]");
 				else
 					log.info("[FAILED]");
 				Assert.assertTrue(condition);
@@ -66,7 +66,7 @@ public class AbstractTest {
 		if(flag == false) {
 			try {
 				if(condition == false) 
-					log.info("[PASS]");
+					log.info("[PASSED]");
 				else
 					log.info("[FAILED]");
 				Assert.assertTrue(condition);

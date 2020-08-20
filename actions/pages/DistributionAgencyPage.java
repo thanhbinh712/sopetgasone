@@ -94,4 +94,8 @@ public class DistributionAgencyPage extends AbstractPage {
 		waitForControlVisible(driver, DistributionAgencyPageUI.ADD_CHILD_BUTTON);
 		clickToElement(driver, DistributionAgencyPageUI.ADD_CHILD_BUTTON);
 	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();
+	}
 }

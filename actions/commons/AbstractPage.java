@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.DistributionAgencyPage;
+import pages.ExportCylinderPage;
 import pages.CreateCylinderPage;
 import pagesUI.AbstractPageUI;
 
@@ -161,5 +162,13 @@ public class AbstractPage extends AbstractTest{
 		waitForControlVisible(driver, pagesUI.CreateCylinderPageUI.CREATE_CYLINDER_BUTTON);
 		clickToElement(driver, pagesUI.CreateCylinderPageUI.CREATE_CYLINDER_BUTTON);
 		return PageFactoryManager.getCreateCylinderPage(driver);
+	}
+	
+	public ExportCylinderPage openExportCylinderPage(WebDriver driver) {
+		waitForControlVisible(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
+		waitForControlVisible(driver, pagesUI.ExportCylinderPageUI.EXPORT_CYLINDER_BUTTON);
+		clickToElement(driver, pagesUI.ExportCylinderPageUI.EXPORT_CYLINDER_BUTTON);
+		return PageFactoryManager.getExportCylinderPage(driver);
 	}
 }

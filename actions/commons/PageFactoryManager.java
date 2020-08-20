@@ -3,6 +3,7 @@ package commons;
 import org.openqa.selenium.WebDriver;
 
 import pages.DistributionAgencyPage;
+import pages.ExportCylinderPage;
 import pages.HomePage;
 import pages.CreateCylinderPage;
 import pages.LoginPage;
@@ -13,7 +14,7 @@ public class PageFactoryManager {
 	private static HomePage homePage;;
 	private static DistributionAgencyPage createAccountPage;
 	private static CreateCylinderPage createCylinderPage;
-	
+	private static ExportCylinderPage exportCylinderPage;
 	
 	WebDriver driver;
 	
@@ -43,5 +44,12 @@ public class PageFactoryManager {
 			return new CreateCylinderPage(driver);
 		}
 		return createCylinderPage;
+	}
+	
+	public static ExportCylinderPage getExportCylinderPage(WebDriver driver) {
+		if(exportCylinderPage == null) {
+			return new ExportCylinderPage(driver);
+		}
+		return exportCylinderPage;
 	}
 }

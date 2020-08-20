@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pagesUI.ExportCylinderPageUI;
+import pagesUI.HomePageUI;
 
 public class ExportCylinderPage extends AbstractPage{
 	WebDriver driver;
@@ -61,5 +62,24 @@ public class ExportCylinderPage extends AbstractPage{
 	public void clickToCloseButton() {
 		waitForControlVisible(driver, ExportCylinderPageUI.CLOSE_BUTTON);
 		clickToElement(driver, ExportCylinderPageUI.CLOSE_BUTTON);
+	}
+	
+//	public void clickToResetButton() {
+//		waitForControlVisible(driver, ExportCylinderPageUI.RESET_BUTTON);
+//		clickToElement(driver, ExportCylinderPageUI.RESET_BUTTON);
+//	}
+	
+	public String getMessageInvalidCode() {
+		waitForControlVisible(driver, ExportCylinderPageUI.NOTIFICATION_STATUS_MESSAGE);
+		return getTextElement(driver, ExportCylinderPageUI.NOTIFICATION_STATUS_MESSAGE);
+	}
+	
+	public String getMessageEmptyCode() {
+		waitForControlVisible(driver, ExportCylinderPageUI.NOTIFICATION_EMPTY_MESSAGE);
+		return getTextElement(driver, ExportCylinderPageUI.NOTIFICATION_EMPTY_MESSAGE);
+	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();
 	}
 }
