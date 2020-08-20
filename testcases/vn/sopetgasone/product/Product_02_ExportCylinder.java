@@ -32,45 +32,66 @@ public class Product_02_ExportCylinder extends AbstractTest {
 		homePage = loginPage.clickToLoginButton();
 	  }
 	
-  @Test
-  public void TC_Product_03_ExportWithInvalidCylinder() throws Exception {
-	  log.info("************* TC03 - EXPORT CYLINDER  **************");
-	  
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 01 --> Open Export Cylinder Page");
-	  exportCylinderPage = homePage.openExportCylinderPage(driver);
-	  
-	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Invalid Cylinder.txt";
-	  
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 02 --> Upload file import with invalid cylinder code");
-	  exportCylinderPage.sendKeyToExportCylinder(filePath); 
-	
-	  message = "Những mã này đang vận chuyển, đã bán, bình rỗng, hoặc đang không ở doanh nghiệp sở tại nên không thể xuất : ";
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
-	  verifyEquals(message, exportCylinderPage.getMessageInvalidCode());
-	  
-	  exportCylinderPage.refreshPage();
-  }
+//  @Test
+//  public void TC_Product_03_ExportWithInvalidCylinder() throws Exception {
+//	  log.info("************* TC03 - EXPORT CYLINDER  **************");
+//	  
+//	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 01 --> Open Export Cylinder Page");
+//	  exportCylinderPage = homePage.openExportCylinderPage(driver);
+//	  
+//	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Invalid Cylinder.txt";
+//	  
+//	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 02 --> Upload file import with invalid cylinder code");
+//	  exportCylinderPage.sendKeyToExportCylinder(filePath); 
+//	
+//	  message = "Những mã này đang vận chuyển, đã bán, bình rỗng, hoặc đang không ở doanh nghiệp sở tại nên không thể xuất : ";
+//	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
+//	  verifyEquals(message, exportCylinderPage.getMessageInvalidCode());
+//	  
+//	  exportCylinderPage.refreshPage();
+//  }
+//  
+//  @Test
+//  public void TC_Product_04_ExportWithEmptyFile() throws Exception {
+//	  log.info("************* TC04 - EXPORT CYLINDER  **************");
+//	  
+//	  log.info("TC_Product_04_ExportWithEmptyFile - Step 01 --> Open Export Cylinder Page");
+//	  exportCylinderPage = homePage.openExportCylinderPage(driver);
+//	  
+//	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Empty Cylinder.txt";
+//	  
+//	  log.info("TC_Product_04_ExportWithEmptyFile - Step 02 --> Upload file import with empty cylinder code");
+//	  exportCylinderPage.sendKeyToExportCylinder(filePath); 
+//	
+//	  message = "Empty request cylinder_serials, cylinder_serials must be id array";
+//	  log.info("TC_Product_04_ExportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code");
+//	  verifyEquals(message, exportCylinderPage.getMessageEmptyCode());
+//	  
+//	  exportCylinderPage.refreshPage();
+//  }
   
   @Test
-  public void TC_Product_04_ExportWithEmptyFile() throws Exception {
-	  log.info("************* TC04 - EXPORT CYLINDER  **************");
+  public void TC_Product_05_ExportWithValidFile() throws Exception {
+	  log.info("************* TC05 - EXPORT CYLINDER  **************");
 	  
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 01 --> Open Export Cylinder Page");
+	  log.info("TC_Product_05_ExportWithValidFile - Step 01 --> Open Export Cylinder Page");
 	  exportCylinderPage = homePage.openExportCylinderPage(driver);
 	  
-	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Empty Cylinder.txt";
+	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Valid Cylinder.txt";
 	  
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 02 --> Upload file import with empty cylinder code");
+	  log.info("TC_Product_05_ExportWithValidFile - Step 02 --> Upload file import with empty cylinder code");
 	  exportCylinderPage.sendKeyToExportCylinder(filePath); 
-	
-	  message = "Empty request cylinder_serials, cylinder_serials must be id array";
-	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
-	  verifyEquals(message, exportCylinderPage.getMessageEmptyCode());
 	  
-	  exportCylinderPage.refreshPage();
+	  exportCylinderPage.scrollToContinueButton();
+	  
+	  log.info("TC_Product_05_ExportWithValidFile - Step 03 --> Click to Continue Button");
+	  exportCylinderPage.clickToContinueButton();
+	  
+	  log.info("TC_Product_05_ExportWithValidFile - Step 04 --> Click choose driver");
+	  exportCylinderPage.selectDriverName();
+	  
+
   }
-  
-  
   
 
   @AfterClass

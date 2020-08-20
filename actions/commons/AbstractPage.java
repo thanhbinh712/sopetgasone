@@ -128,6 +128,12 @@ public class AbstractPage extends AbstractTest{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 	
+	public void waitForControlToBeClick(WebDriver driver, String locator) {
+		By by = By.xpath(locator);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.elementToBeClickable(by)).clear();;
+	}
+	
 	public Object scrollToBottomPage(WebDriver driver) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -135,7 +141,13 @@ public class AbstractPage extends AbstractTest{
 		} catch (Exception e) {
 			e.getMessage();
 			return null;
-		}
+		} 
+	}
+	
+	public void scrollToElement(WebDriver driver, String locator) {
+		WebElement element = driver.findElement(By.xpath(locator));
+		((JavascriptExecutor)
+				driver).executeScript ("arguments[0].scrollIntoView();", element);
 	}
 	
 	public void selectedItemDropdownDiv(WebDriver driver, String locator, String text) {

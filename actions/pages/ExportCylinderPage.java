@@ -1,10 +1,10 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pagesUI.ExportCylinderPageUI;
-import pagesUI.HomePageUI;
 
 public class ExportCylinderPage extends AbstractPage{
 	WebDriver driver;
@@ -20,7 +20,7 @@ public class ExportCylinderPage extends AbstractPage{
 	
 	public void clickToContinueButton() {
 		waitForControlVisible(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
-		clearToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
+		clickToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
 	}
 	
 	public void selectDriverName() {
@@ -81,5 +81,9 @@ public class ExportCylinderPage extends AbstractPage{
 	
 	public void refreshPage() {
 		driver.navigate().refresh();
+	}
+	
+	public void scrollToContinueButton() {
+		scrollToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
 	}
 }
