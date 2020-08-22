@@ -70,6 +70,11 @@ public class DistributionAgencyPage extends AbstractPage {
 		return getTextElement(driver, DistributionAgencyPageUI.CREATE_SUCCESS_MESSAGE);
 	}
 	
+	public String existCustomerCodeMessage() {
+		waitForControlVisible(driver, DistributionAgencyPageUI.EXISTCODE_MESSAGE);
+		return getTextElement(driver, DistributionAgencyPageUI.EXISTCODE_MESSAGE);
+	}
+	
 	public void clickToCloseButton() {
 		waitForControlVisible(driver, DistributionAgencyPageUI.CLOSE_BUTTON);
 		clickToElement(driver, DistributionAgencyPageUI.CLOSE_BUTTON);

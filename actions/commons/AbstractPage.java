@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.DistributionAgencyPage;
 import pages.ExportCylinderPage;
+import pages.ImportCylinderPage;
 import pages.CreateCylinderPage;
 import pagesUI.AbstractPageUI;
 
@@ -168,6 +169,16 @@ public class AbstractPage extends AbstractTest{
 		return PageFactoryManager.getDistributionAgencyPage(driver);
 	}
 	
+	public DistributionAgencyPage openDistriButionAgencyPage2(WebDriver driver) {
+		waitForControlVisible(driver, pagesUI.HomePageUI.BUSSINESS_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.BUSSINESS_MENULINK);
+		waitForControlVisible(driver, pagesUI.HomePageUI.CUSTOMER_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.CUSTOMER_MENULINK);
+		waitForControlVisible(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
+		clickToElement(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
+		return PageFactoryManager.getDistributionAgencyPage(driver);
+	}
+	
 	public CreateCylinderPage openCreateCylinderPage(WebDriver driver) {
 		waitForControlVisible(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
 		clickToElement(driver, pagesUI.HomePageUI.PRODUCT_MENULINK);
@@ -182,5 +193,11 @@ public class AbstractPage extends AbstractTest{
 		waitForControlVisible(driver, pagesUI.ExportCylinderPageUI.EXPORT_CYLINDER_BUTTON);
 		clickToElement(driver, pagesUI.ExportCylinderPageUI.EXPORT_CYLINDER_BUTTON);
 		return PageFactoryManager.getExportCylinderPage(driver);
+	}
+	
+	public ImportCylinderPage openImportCylinderPage(WebDriver driver) {
+		waitForControlVisible(driver, pagesUI.ImportCylinderPageUI.IMPORTCYLINDER_BUTTON);
+		clickToElement(driver, pagesUI.ImportCylinderPageUI.IMPORTCYLINDER_BUTTON);
+		return PageFactoryManager.getImportCylinderPage(driver);
 	}
 }

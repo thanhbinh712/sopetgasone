@@ -11,13 +11,16 @@ import pages.LoginPage;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
 public class User_01_LoginAndCreateUser extends AbstractTest {
 	WebDriver driver;
 	String emailI, password, loginUrl, homePageUrl, emailNew, name, code, emailFailed, 
-			passwordFailed, nameUser;
+			passwordFailed, nameUser, message;
 
 	private LoginPage loginPage;
 	private HomePage homePage;
@@ -33,49 +36,49 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		password = "A123!@#";
 	}
 	
-	@Test
-	public void TC_User_01_TradeOwnerLoginInvalidEmail() {
-		emailFailed = "ttthanhbinhtester@dvs.vn";
-		log.info("**************** TC01 - LOGIN WITH INVALID EMAIL  ****************");
-		
-		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email");
-		loginPage.inputToEmailTextbox(emailFailed);
-		
-		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password");
-		loginPage.inputToPasswordTextbox(password);
-		
-		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button");
-		homePage = loginPage.clickToLoginButton();
-		
-		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed");
-		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
-		
-//		log.info("***********************************************************************");
-	}
-	
-	@Test
-	public void TC_User_02_TradeOwnerLoginInvalidPassword() {
-		passwordFailed = "A123!@#qqq";
-		
-		log.info("**************** TC02 - LOGIN WITH INVALID PASSWORD  ****************");
-		
-		loginPage.clearToEmailTextbox();
-		loginPage.clearToPasswordTextbox();
-		
-		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email");
-		loginPage.inputToEmailTextbox(emailI);
-		
-		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password");
-		loginPage.inputToPasswordTextbox(passwordFailed);
-		
-		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button");
-		homePage = loginPage.clickToLoginButton();
-		
-		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed");
-		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
-		
-//		log.info("***********************************************************************");
-	}
+//	@Test
+//	public void TC_User_01_TradeOwnerLoginInvalidEmail() {
+//		emailFailed = "ttthanhbinhtester@dvs.vn";
+//		log.info("**************** TC01 - LOGIN WITH INVALID EMAIL  ****************");
+//		
+//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email");
+//		loginPage.inputToEmailTextbox(emailFailed);
+//		
+//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password");
+//		loginPage.inputToPasswordTextbox(password);
+//		
+//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button");
+//		homePage = loginPage.clickToLoginButton();
+//		
+//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed");
+//		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
+//		
+////		log.info("***********************************************************************");
+//	}
+//	
+//	@Test
+//	public void TC_User_02_TradeOwnerLoginInvalidPassword() {
+//		passwordFailed = "A123!@#qqq";
+//		
+//		log.info("**************** TC02 - LOGIN WITH INVALID PASSWORD  ****************");
+//		
+//		loginPage.clearToEmailTextbox();
+//		loginPage.clearToPasswordTextbox();
+//		
+//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email");
+//		loginPage.inputToEmailTextbox(emailI);
+//		
+//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password");
+//		loginPage.inputToPasswordTextbox(passwordFailed);
+//		
+//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button");
+//		homePage = loginPage.clickToLoginButton();
+//		
+//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed");
+//		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
+//		
+////		log.info("***********************************************************************");
+//	}
 	
 	@Test
 	public void TC_User_03_TradeOwnerLoginSuccess() {
@@ -145,7 +148,12 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		log.info("TC_User_04_CreateDistributionAgency - Step 12 --> Click to Save Button");
 		distributionAgencyPage.clickToSaveButton();
 		
-		Thread.sleep(5000);
+		log.info("TC_User_04_CreateDistributionAgency - Step 13 --> Verify Exist Customer Code Message");
+		message = "Trùng mã khách hàng";
+		verifyEquals(message, distributionAgencyPage.existCustomerCodeMessage());
+		
+		distributionAgencyPage.clickToCloseButton();
+
 	}
 	
 	@DataProvider
@@ -157,15 +165,16 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 	@Test(dataProvider = "getDataCreateCustomer")
 	public void TC_User_05_CreateDistributionAgency(String email, String name, String code, String address, String group, 
 																String childID, String childName, String childAddress) throws Exception {
-		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
+		log.info("******************** TC05 - CREATE NEW CUSTOMER  *********************");
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
-		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
+		homePage.refreshPage();
+		//distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 02 --> Click to Create button");
 		distributionAgencyPage.clickToCreateButton();
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
+		log.info("TC_User_05_CreateDistributionAgency - Step 03 --> Fill to email textbox " + email);
 		distributionAgencyPage.InputToEmailTextbox(email);
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
@@ -195,7 +204,6 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		log.info("TC_User_05_CreateDistributionAgency - Step 10 --> Click to Save Button");
 		distributionAgencyPage.clickToSaveButton();
 		
-		Thread.sleep(5000);
 	}
 
 	@AfterClass

@@ -86,4 +86,8 @@ public class ExportCylinderPage extends AbstractPage{
 	public void scrollToContinueButton() {
 		scrollToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
 	}
+	
+	public void scrollToSaveButton() {
+		scrollToElement(driver, ExportCylinderPageUI.SAVE_BUTTON);
+	}
 }

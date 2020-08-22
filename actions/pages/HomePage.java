@@ -33,4 +33,8 @@ public class HomePage extends AbstractPage{
 		waitForControlVisible(driver, HomePageUI.NAME_LABEL);
 		return getTextElement(driver, HomePageUI.NAME_LABEL);
 	}
+	
+	public void refreshPage() {
+		driver.navigate().refresh();
+	}
 }

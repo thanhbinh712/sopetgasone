@@ -8,7 +8,7 @@ public class DistributionAgencyPageUI {
 	public static final String ADDRESS_TEXTBOX = "//input[@id='address']";
 	public static final String SAVE_BUTTON = "//button[@class='btn btn-primary']";
 	public static final String CLOSE_BUTTON = "//button[@class='btn btn-secondary']";
-	public static final String EXISTCODE_MESSAGE = "//div[contains(text(),'Trùng mã khách hàng')]";
+	//public static final String EXISTCODE_MESSAGE = "//div[contains(text(),'Trùng mã khách hàng')]";
 	public static final String SEARCH_BOX = "//input[@id='inputText']";
 	public static final String SEARCH_DROPDOWN = "//select[@id='inlineSelect']";
 	public static final String SEARCH_BUTTON = "//button[@class='btn btn-primary mb-2']";
@@ -21,4 +21,5 @@ public class DistributionAgencyPageUI {
 	public static final String CHILD_NAME_TEXTBOX = "//input[@id='agencyName']";
 	public static final String CHILD_ADDRESS_TEXTBOX = "//input[@id='agencyAddress']";
 	public static final String ADD_CHILD_BUTTON = "//button[@class='btn btn-success']";
+	public static final String EXISTCODE_MESSAGE = "//div[@class='ant-notification ant-notification-topRight']//span";
 }

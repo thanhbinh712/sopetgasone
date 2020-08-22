@@ -16,6 +16,8 @@
 	<test name="Test02">
 		<classes>
 			<class name="vn.sopetgasone.product.Product_01_CreateCylinder" />
+			<class name="vn.sopetgasone.product.Product_02_ExportCylinder" />
+			<class name="vn.sopetgasone.product.Product_03_ImportCylinder" />
 		</classes>
 	</test>
 </suite> 

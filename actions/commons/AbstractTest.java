@@ -10,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-
 public class AbstractTest {
 	public final Log log;
 	

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pages.DistributionAgencyPage;
 import pages.ExportCylinderPage;
 import pages.HomePage;
+import pages.ImportCylinderPage;
 import pages.CreateCylinderPage;
 import pages.LoginPage;
 
@@ -15,6 +16,7 @@ public class PageFactoryManager {
 	private static DistributionAgencyPage createAccountPage;
 	private static CreateCylinderPage createCylinderPage;
 	private static ExportCylinderPage exportCylinderPage;
+	private static ImportCylinderPage importCylinderPage;
 	
 	WebDriver driver;
 	
@@ -51,5 +53,12 @@ public class PageFactoryManager {
 			return new ExportCylinderPage(driver);
 		}
 		return exportCylinderPage;
+	}
+	
+	public static ImportCylinderPage getImportCylinderPage(WebDriver driver) {
+		if(importCylinderPage == null) {
+			return new ImportCylinderPage(driver);
+		}
+		return importCylinderPage;
 	}
 }
