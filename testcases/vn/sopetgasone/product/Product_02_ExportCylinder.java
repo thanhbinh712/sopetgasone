@@ -48,7 +48,7 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  log.info("TC_Product_03_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
 	  verifyEquals(message, exportCylinderPage.getMessageInvalidCode());
 	  
-	  exportCylinderPage.refreshPage();
+	//  exportCylinderPage.refreshPage();
   }
   
   @Test
@@ -56,7 +56,8 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  log.info("************* TC04 - EXPORT CYLINDER  **************");
 	  
 	  log.info("TC_Product_04_ExportWithEmptyFile - Step 01 --> Open Export Cylinder Page");
-	  exportCylinderPage = homePage.openExportCylinderPage(driver);
+	  //exportCylinderPage = homePage.openExportCylinderPage(driver);
+	  exportCylinderPage = PageFactoryManager.getExportCylinderPage(driver);
 	  
 	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Empty Cylinder.txt";
 	  
@@ -67,7 +68,7 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  log.info("TC_Product_04_ExportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code");
 	  verifyEquals(message, exportCylinderPage.getMessageEmptyCode());
 	  
-	  exportCylinderPage.refreshPage();
+	//  exportCylinderPage.refreshPage();
   }
   
   @Test
@@ -75,7 +76,8 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  log.info("************* TC05 - EXPORT CYLINDER  **************");
 	  
 	  log.info("TC_Product_05_ExportWithValidFile - Step 01 --> Open Export Cylinder Page");
-	  exportCylinderPage = homePage.openExportCylinderPage(driver);
+	  //exportCylinderPage = homePage.openExportCylinderPage(driver);
+	  exportCylinderPage = PageFactoryManager.getExportCylinderPage(driver);
 	  
 	  filePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Valid Cylinder.txt";
 	  
@@ -97,20 +99,26 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  exportCylinderPage.selectCustomerType();
 	  
 	  log.info("TC_Product_05_ExportWithValidFile - Step 07 --> Click choose customer name");
-	  exportCylinderPage.selectCustomerName("Đại lý phân phối Bình Test 18/08");
+	  exportCylinderPage.selectCustomerName();
 	  
 	  log.info("TC_Product_05_ExportWithValidFile - Step 08 --> Click choose child name");
-	  exportCylinderPage.sendKeyToCustomerChild("Chi nhánh DLPP Bình Test 18/08");
+	  exportCylinderPage.selectCustomerChild("Chi nhánh DLPP Bình Test 18/08");
+	  
+	  exportCylinderPage.pressENTER();
 	  
 	  exportCylinderPage.scrollToSaveButton();
 	  
-	  log.info("TC_Product_05_ExportWithValidFile - Step 09 --> Click save driver");
+	  log.info("TC_Product_05_ExportWithValidFile - Step 09 --> Click save buttton");
 	  exportCylinderPage.clickToSaveButton();
 	  
+	  log.info("TC_Product_05_ExportWithValidFile - Step 07 --> Verify import success");
+	  message = "Xuất hàng thành công!";
+	  verifyEquals(message, exportCylinderPage.getMessageSuccess());
   }
 
   @AfterClass
   public void afterClass() {
+	  log.info("	**********************  CLOSE BROWSER  ******************     ");
 	  closeBrowser();
   }
 

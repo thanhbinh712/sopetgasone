@@ -14,6 +14,10 @@ public class DistributionAgencyPage extends AbstractPage {
 	public DistributionAgencyPage(WebDriver driver_) {
 		this.driver = driver_;
 	}
+
+	public String getDistributionAgencyPageUrl() {
+		return getCurrentUrl(driver);
+	}
 	
 	public void clickToCreateButton() {
 		waitForControlVisible(driver, DistributionAgencyPageUI.CREATE_FACTORYCHILD_BUTTON);

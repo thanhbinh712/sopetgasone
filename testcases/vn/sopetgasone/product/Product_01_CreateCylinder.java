@@ -27,7 +27,7 @@ public class Product_01_CreateCylinder extends AbstractTest {
 	public void beforeClass() {
 		driver = openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		loginUrl = loginPage.getLoginPageUrl();
+	//	loginUrl = loginPage.getLoginPageUrl();
 		email = "thanhbinhtester@dvs.vn";
 		password = "A123!@#";
 		loginPage.inputToEmailTextbox(email);

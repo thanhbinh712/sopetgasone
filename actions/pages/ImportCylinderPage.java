@@ -72,6 +72,6 @@ public class ImportCylinderPage extends AbstractPage {
 	}
 	
 	public void scrollToContinueButton() {
-		scrollToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
+		scrollToElement(driver, ImportCylinderPageUI.CONTINUE_BUTTON);
 	}
 }

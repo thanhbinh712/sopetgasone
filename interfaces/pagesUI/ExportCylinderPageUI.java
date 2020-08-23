@@ -16,5 +16,6 @@ public class ExportCylinderPageUI {
 	public static final String NOTIFICATION_EMPTY_MESSAGE = "//label[contains(text(),'Empty request cylinder_serials, cylinder_serials must be id array')]";
 	public static final String NOTIFICATION_STATUS_MESSAGE = "//label[contains(text(),'Những mã này đang vận chuyển, đã bán, bình rỗng, hoặc đang không ở doanh nghiệp sở tại nên không thể xuất :')]";
 	public static final String NOTIFICATION_SUCCESS_MESSAGE = "//div[contains(text(),'Xuất hàng thành công!')]";
-	public static final String RESET_BUTTON = "";
+	public static final String CUSTOMER_NAME = "//option[contains(text(),'Đại lý phân phối Bình Test 18/08')]";
+	public static final String CUSTOMER_CHILD = "//span[contains(text(),'Chi nhánh DLPP Bình Test 18/08')]";
 }

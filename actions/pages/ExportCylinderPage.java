@@ -18,8 +18,12 @@ public class ExportCylinderPage extends AbstractPage{
 		sendKeysToElement(driver, ExportCylinderPageUI.UPLOADFILE_EXPORT_CYLINDER, filePath);
 	}
 	
-	public void clickToContinueButton() {
+	public void clickToContinueButton2() {
 		waitForControlVisible(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
+		clickToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
+	}
+	
+	public void clickToContinueButton() {
 		clickToElement(driver, ExportCylinderPageUI.CONTINUE_BUTTON);
 	}
 	
@@ -44,18 +48,24 @@ public class ExportCylinderPage extends AbstractPage{
 		clickToElement(driver, ExportCylinderPageUI.DISTRIBUTION_AGENCY);
 	}
 	
-	public void selectCustomerName(String name) {
+	public void selectCustomerName() {
 		waitForControlVisible(driver, ExportCylinderPageUI.CUSTOME_NAME_DROPDOWN);
 		clickToElement(driver, ExportCylinderPageUI.CUSTOME_NAME_DROPDOWN);
+		waitForControlVisible(driver, ExportCylinderPageUI.CUSTOMER_NAME);
+		clickToElement(driver, ExportCylinderPageUI.CUSTOMER_NAME);
 	}
 	
-	public void sendKeyToCustomerChild(String childname) {
+	public void selectCustomerChild(String childName) {
 		waitForControlVisible(driver, ExportCylinderPageUI.CUSTOMER_CHILD_DROPDOWN);
-		sendKeysToElement(driver, ExportCylinderPageUI.CUSTOMER_CHILD_DROPDOWN, childname);
+		sendKeysToElement(driver, ExportCylinderPageUI.CUSTOMER_CHILD_DROPDOWN, childName);
+	}
+	
+	public void clickToSaveButton2() {
+		waitForControlVisible(driver, ExportCylinderPageUI.SAVE_BUTTON);
+		clickToElement(driver, ExportCylinderPageUI.SAVE_BUTTON);
 	}
 	
 	public void clickToSaveButton() {
-		waitForControlVisible(driver, ExportCylinderPageUI.SAVE_BUTTON);
 		clickToElement(driver, ExportCylinderPageUI.SAVE_BUTTON);
 	}
 	
@@ -79,6 +89,11 @@ public class ExportCylinderPage extends AbstractPage{
 		return getTextElement(driver, ExportCylinderPageUI.NOTIFICATION_EMPTY_MESSAGE);
 	}
 	
+	public String getMessageSuccess() {
+		waitForControlVisible(driver, ExportCylinderPageUI.NOTIFICATION_SUCCESS_MESSAGE);
+		return getTextElement(driver, ExportCylinderPageUI.NOTIFICATION_SUCCESS_MESSAGE);
+	}
+	
 	public void refreshPage() {
 		driver.navigate().refresh();
 	}
@@ -89,5 +104,9 @@ public class ExportCylinderPage extends AbstractPage{
 	
 	public void scrollToSaveButton() {
 		scrollToElement(driver, ExportCylinderPageUI.SAVE_BUTTON);
+	}
+	
+	public void pressENTER() {
+		pressEnter(driver);
 	}
 }

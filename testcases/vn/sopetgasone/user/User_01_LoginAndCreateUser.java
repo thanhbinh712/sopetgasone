@@ -31,54 +31,54 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		log.info("	**********************  OPEN BROWSER  ******************     ");
 		driver = openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		loginUrl = loginPage.getLoginPageUrl();
+	//	loginUrl = loginPage.getLoginPageUrl();
 		emailI = "thanhbinhtester@dvs.vn";
 		password = "A123!@#";
 	}
 	
-//	@Test
-//	public void TC_User_01_TradeOwnerLoginInvalidEmail() {
-//		emailFailed = "ttthanhbinhtester@dvs.vn";
-//		log.info("**************** TC01 - LOGIN WITH INVALID EMAIL  ****************");
-//		
-//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email");
-//		loginPage.inputToEmailTextbox(emailFailed);
-//		
-//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password");
-//		loginPage.inputToPasswordTextbox(password);
-//		
-//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button");
-//		homePage = loginPage.clickToLoginButton();
-//		
-//		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed");
-//		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
-//		
-////		log.info("***********************************************************************");
-//	}
-//	
-//	@Test
-//	public void TC_User_02_TradeOwnerLoginInvalidPassword() {
-//		passwordFailed = "A123!@#qqq";
-//		
-//		log.info("**************** TC02 - LOGIN WITH INVALID PASSWORD  ****************");
-//		
-//		loginPage.clearToEmailTextbox();
-//		loginPage.clearToPasswordTextbox();
-//		
-//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email");
-//		loginPage.inputToEmailTextbox(emailI);
-//		
-//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password");
-//		loginPage.inputToPasswordTextbox(passwordFailed);
-//		
-//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button");
-//		homePage = loginPage.clickToLoginButton();
-//		
-//		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed");
-//		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
-//		
-////		log.info("***********************************************************************");
-//	}
+	@Test
+	public void TC_User_01_TradeOwnerLoginInvalidEmail() {
+		emailFailed = "ttthanhbinhtester@dvs.vn";
+		log.info("**************** TC01 - LOGIN WITH INVALID EMAIL  ****************");
+		
+		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email");
+		loginPage.inputToEmailTextbox(emailFailed);
+		
+		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password");
+		loginPage.inputToPasswordTextbox(password);
+		
+		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button");
+		homePage = loginPage.clickToLoginButton();
+		
+		log.info("TC_User_01_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed");
+		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
+		
+//		log.info("***********************************************************************");
+	}
+	
+	@Test
+	public void TC_User_02_TradeOwnerLoginInvalidPassword() {
+		passwordFailed = "A123!@#qqq";
+		
+		log.info("**************** TC02 - LOGIN WITH INVALID PASSWORD  ****************");
+		
+		loginPage.clearToEmailTextbox();
+		loginPage.clearToPasswordTextbox();
+		
+		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email");
+		loginPage.inputToEmailTextbox(emailI);
+		
+		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password");
+		loginPage.inputToPasswordTextbox(passwordFailed);
+		
+		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button");
+		homePage = loginPage.clickToLoginButton();
+		
+		log.info("TC_User_02_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed");
+		verifyEquals("Thông tin không chính xác", loginPage.getLoginFailedMessage());
+		
+//		log.info("***********************************************************************");
+	}
 	
 	@Test
 	public void TC_User_03_TradeOwnerLoginSuccess() {
@@ -152,7 +152,7 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		message = "Trùng mã khách hàng";
 		verifyEquals(message, distributionAgencyPage.existCustomerCodeMessage());
 		
-		distributionAgencyPage.clickToCloseButton();
+	//	distributionAgencyPage.clickToCloseButton();
 
 	}
 	
@@ -169,13 +169,13 @@ public class User_01_LoginAndCreateUser extends AbstractTest {
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
 		homePage.refreshPage();
-		//distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
+		distributionAgencyPage = PageFactoryManager.getDistributionAgencyPage(driver);
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 02 --> Click to Create button");
 		distributionAgencyPage.clickToCreateButton();
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 03 --> Fill to email textbox " + email);
-		distributionAgencyPage.InputToEmailTextbox(email);
+		distributionAgencyPage.InputToEmailTextbox(email+"@gmail.com");
 		
 		log.info("TC_User_05_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
 		distributionAgencyPage.InputToNameTextbox(name);
