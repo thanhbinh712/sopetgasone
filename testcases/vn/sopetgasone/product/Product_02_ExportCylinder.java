@@ -67,8 +67,6 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  message = "Empty request cylinder_serials, cylinder_serials must be id array";
 	  log.info("TC_Product_04_ExportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code");
 	  verifyEquals(message, exportCylinderPage.getMessageEmptyCode());
-	  
-	//  exportCylinderPage.refreshPage();
   }
   
   @Test

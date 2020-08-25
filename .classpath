@@ -24,5 +24,10 @@
 	<classpathentry kind="lib" path="lib/velocity-dep-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/webdrivermanager-2.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.7.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.7-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.7-tests.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.7-test-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -29,13 +29,25 @@ public class AbstractTest {
 		return driver;
 	}
 	
+//	@AfterMethod
+//	gen = new Generator();
+	//screenshot = new Screenshot(gen, driver);
+//	title = gen.title();
+	//body = gen.body();
+//	public void tearDown(ITestResult testResult) throws IOException {
+//		if (testResult.getStatus() == ITestResult.FAILURE) {
+//			screenshot.takeScreenshot(testResult.getName());
+//		}
+//		driver.quit();
+//	}
+	
 	public int randomNumber() {
 		Random random = new Random();
 		int number = random.nextInt(9999);
 		return number;
 	}
 	
-	protected boolean verifyPassed(boolean condition, boolean flag) {
+	protected boolean verifyPassed(boolean condition, boolean flag){
 		boolean pass = true;
 		if(flag == false) {
 			try {
@@ -47,6 +59,7 @@ public class AbstractTest {
 			}catch(Throwable e) {
 				pass = false;
 				Reporter.getCurrentTestResult().setThrowable(e);
+				
 			}
 		}
 		else {
@@ -59,7 +72,7 @@ public class AbstractTest {
 		return verifyPassed(condition, false);
 	}
 	
-	protected boolean verifyFailed(boolean condition, boolean flag) {
+	protected boolean verifyFailed(boolean condition, boolean flag){
 		boolean pass = true;
 		if(flag == false) {
 			try {
@@ -83,7 +96,7 @@ public class AbstractTest {
 		return verifyFailed(condition, false);
 	}
 	
-	protected boolean verifyEquals(Object actual, Object expected, boolean flag) {
+	protected boolean verifyEquals(Object actual, Object expected, boolean flag){
 		boolean pass = true;
 		if(flag == false) {
 			try {
@@ -91,6 +104,7 @@ public class AbstractTest {
 			}catch(Throwable e) {
 				pass = false;
 				Reporter.getCurrentTestResult().setThrowable(e);
+				
 			}
 		}
 		else {
@@ -109,6 +123,5 @@ public class AbstractTest {
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
-	
+	}	
 }

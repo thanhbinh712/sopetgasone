@@ -107,4 +107,8 @@ public class DistributionAgencyPage extends AbstractPage {
 	public void refreshPage() {
 		driver.navigate().refresh();
 	}
+	
+	public void pressENTER() {
+		pressEnter(driver);
+	}
 }
