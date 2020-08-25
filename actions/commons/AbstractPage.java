@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DistributionAgencyPage;
 import pages.ExportCylinderPage;
 import pages.ImportCylinderPage;
+import pages.LoginPage;
 import pages.CreateCylinderPage;
 import pagesUI.AbstractPageUI;
 
@@ -174,6 +175,7 @@ public class AbstractPage extends AbstractTest{
 		clickToElement(driver, pagesUI.HomePageUI.CUSTOMER_MENULINK);
 		waitForControlVisible(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
 		clickToElement(driver, pagesUI.HomePageUI.DISTRIBUTION_AGENCY_MENULINK);
+//		openAnyUrl(driver, GlobalConstants.DISTRIBUTION_AGENCY_LINK);
 		return PageFactoryManager.getDistributionAgencyPage(driver);
 	}
 	
@@ -207,5 +209,10 @@ public class AbstractPage extends AbstractTest{
 		waitForControlVisible(driver, pagesUI.ImportCylinderPageUI.IMPORTCYLINDER_BUTTON);
 		clickToElement(driver, pagesUI.ImportCylinderPageUI.IMPORTCYLINDER_BUTTON);
 		return PageFactoryManager.getImportCylinderPage(driver);
+	}
+	
+	public LoginPage openLoginPage(WebDriver driver) {
+		openAnyUrl(driver, GlobalConstants.TEST_URL);
+		return PageFactoryManager.getLoginPage(driver);
 	}
 }

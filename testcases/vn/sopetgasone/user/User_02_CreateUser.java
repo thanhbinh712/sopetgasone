@@ -15,7 +15,11 @@ import pages.LoginPage;
 
 public class User_02_CreateUser extends AbstractTest {
 	WebDriver driver;
-	String email, password, loginUrl, homePageUrl, emailNew, name, code, nameUser, message;
+	String email = "thanhbinhtester@dvs.vn";
+	String password = "A123!@#";
+	String success_message = "Tạo mới thành công!";
+	String exist_customerCode_message = "Trùng mã khách hàng";
+	String exist_customerEmail_message = "Email đã tồn tại";
 
 	private LoginPage loginPage;
 	private HomePage homePage;
@@ -23,118 +27,13 @@ public class User_02_CreateUser extends AbstractTest {
 
 	@BeforeClass
 	public void beforeClass() {
+		log.info("	**********************  OPEN BROWSER  ******************     ");
 		driver = openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
-	//	loginUrl = loginPage.getLoginPageUrl();
-		email = "thanhbinhtester@dvs.vn";
-		password = "A123!@#";
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(password);
 		homePage = loginPage.clickToLoginButton();
-	}
-	
-	@DataProvider
-	public Object[][] getDataCreateCustomerExistCode(){
-		Object[][] data = ExcelUtils.getTestData("CreateAccountWithExistCode");
-		return data;
-	}
-
-	@Test(dataProvider = "getDataCreateCustomerExistCode")
-	public void TC_User_04_CreateDistributionAgencyWithExistCode(String email, String name, String code, String address, String group, 
-																String childID, String childName, String childAddress) throws Exception {
-		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
 		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button");
-		distributionAgencyPage.clickToCreateButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
-		distributionAgencyPage.InputToEmailTextbox(email);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
-		distributionAgencyPage.InputToNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
-		distributionAgencyPage.InputToCodeTextbox(code);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
-		distributionAgencyPage.InputToInvoiceNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
-		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 08 --> Choose group " + group);
-		distributionAgencyPage.selectGroup(group);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 09 --> Input to Child code: " + childID);
-		distributionAgencyPage.InputToChildIDTextbox(childID);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 10 --> Input to Child name: " + childName);
-		distributionAgencyPage.InputToChildNameTextbox(childName);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 11 --> Input to Child code: " + childAddress);
-		distributionAgencyPage.InputToChildAddressTextbox(childAddress);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 12 --> Click to Save Button");
-		distributionAgencyPage.clickToSaveButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 13 --> Verify Exist Customer Code Message");
-		message = "Trùng mã khách hàng";
-		verifyEquals(message, distributionAgencyPage.existCustomerCodeMessage());
-		
-	//	distributionAgencyPage.clickToCloseButton();
-
-	}
-	
-	@Test(dataProvider = "getDataCreateCustomerExistCode")
-	public void TC_User_05_CreateDistributionAgencyWithExistCode(String email, String name, String code, String address, String group, 
-																String childID, String childName, String childAddress) throws Exception {
-		log.info("******************** TC04 - CREATE NEW CUSTOMER  *********************");
-		
-		log.info("TC_User_05_CreateDistributionAgencyWithExistCode - Step 01 --> Open Distribution Agency Page");
-		distributionAgencyPage = homePage.openDistriButionAgencyPage(driver);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 02 --> Click to Create button");
-		distributionAgencyPage.clickToCreateButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 03 --> Fill to email textbox" + email);
-		distributionAgencyPage.InputToEmailTextbox(email);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
-		distributionAgencyPage.InputToNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
-		distributionAgencyPage.InputToCodeTextbox(code);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
-		distributionAgencyPage.InputToInvoiceNameTextbox(name);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
-		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 08 --> Choose group " + group);
-		distributionAgencyPage.selectGroup(group);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 09 --> Input to Child code: " + childID);
-		distributionAgencyPage.InputToChildIDTextbox(childID);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 10 --> Input to Child name: " + childName);
-		distributionAgencyPage.InputToChildNameTextbox(childName);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 11 --> Input to Child code: " + childAddress);
-		distributionAgencyPage.InputToChildAddressTextbox(childAddress);
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 12 --> Click to Save Button");
-		distributionAgencyPage.clickToSaveButton();
-		
-		log.info("TC_User_04_CreateDistributionAgency - Step 13 --> Verify Exist Customer Code Message");
-		message = "Trùng mã khách hàng";
-		verifyEquals(message, distributionAgencyPage.existCustomerCodeMessage());
-		
-	//	distributionAgencyPage.clickToCloseButton();
-
 	}
 	
 	@DataProvider
@@ -144,47 +43,155 @@ public class User_02_CreateUser extends AbstractTest {
 	}
 
 	@Test(dataProvider = "getDataCreateCustomer")
-	public void TC_User_05_CreateDistributionAgency(String email, String name, String code, String address, String group, 
+	public void TC_User_05_CreateDistributionAgencyValid(String email, String name, String code, String address, String group, 
 																String childID, String childName, String childAddress) throws Exception {
-		log.info("******************** TC05 - CREATE NEW CUSTOMER  *********************");
+		log.info("******************** TC05 - CREATE NEW CUSTOMER VALID  *********************");
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 01 --> Open Distribution Agency Page");
-		homePage.refreshPage();
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 01 --> Open Distribution Agency Page");
 		distributionAgencyPage = PageFactoryManager.getDistributionAgencyPage(driver);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 02 --> Click to Create button");
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 02 --> Click to Create button");
 		distributionAgencyPage.clickToCreateButton();
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 03 --> Fill to email textbox " + email);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 03 --> Fill to email textbox: " + email);
 		distributionAgencyPage.InputToEmailTextbox(email+"@gmail.com");
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 04 --> Fill to name textbox " + name);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 04 --> Fill to name textbox: " + name);
 		distributionAgencyPage.InputToNameTextbox(name);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 05 --> Fill to code textbox " + code);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 05 --> Fill to code textbox: " + code);
 		distributionAgencyPage.InputToCodeTextbox(code);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 06 --> Fill to invoce name textbox " + name);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 06 --> Fill to invoce name textbox: " + name);
 		distributionAgencyPage.InputToInvoiceNameTextbox(name);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 07 --> Fill to address textbox " + address);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 07 --> Fill to address textbox: " + address);
 		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 08 --> Choose group " + group);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 08 --> Choose group: " + group);
 		distributionAgencyPage.selectGroup(group);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 09 --> Input to Child code: " + childID);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 09 --> Input to Child code: " + childID);
 		distributionAgencyPage.InputToChildIDTextbox(childID);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 10 --> Input to Child name: " + childName);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 10 --> Input to Child name: " + childName);
 		distributionAgencyPage.InputToChildNameTextbox(childName);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 11 --> Input to Child code: " + childAddress);
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 11 --> Input to Child code: " + childAddress);
 		distributionAgencyPage.InputToChildAddressTextbox(childAddress);
 		
-		log.info("TC_User_05_CreateDistributionAgency - Step 10 --> Click to Save Button");
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 10 --> Click to Save Button");
 		distributionAgencyPage.clickToSaveButton();
 		
+		log.info("TC_User_05_CreateDistributionAgencyValid - Step 11 --> Verify create success message: " + success_message);
+		verifyEquals(success_message, distributionAgencyPage.createSuccessMessage());
+		
+		distributionAgencyPage.refreshPage();
+	}
+	
+	@DataProvider
+	public Object[][] getDataCreateCustomerExistCode(){
+		Object[][] data = ExcelUtils.getTestData("CreateAccountWithExistCode");
+		return data;
+	}
+	
+	@Test(dataProvider = "getDataCreateCustomerExistCode")
+	public void TC_User_06_CreateDistributionAgencyWithExistCode(String email, String name, String code, String address, String group, 
+																String childID, String childName, String childAddress) throws Exception {
+		log.info("******************** TC06 - CREATE NEW CUSTOMER WITH EXIST CODE  *********************");
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 01 --> Open Distribution Agency Page");
+		distributionAgencyPage = PageFactoryManager.getDistributionAgencyPage(driver);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 02 --> Click to Create button");
+		distributionAgencyPage.clickToCreateButton();
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 03 --> Fill to email textbox" + email);
+		distributionAgencyPage.InputToEmailTextbox(email);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 04 --> Fill to name textbox " + name);
+		distributionAgencyPage.InputToNameTextbox(name);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 05 --> Fill to code textbox " + code);
+		distributionAgencyPage.InputToCodeTextbox(code);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 06 --> Fill to invoce name textbox " + name);
+		distributionAgencyPage.InputToInvoiceNameTextbox(name);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 07 --> Fill to address textbox " + address);
+		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 08 --> Choose group " + group);
+		distributionAgencyPage.selectGroup(group);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 09 --> Input to Child code: " + childID);
+		distributionAgencyPage.InputToChildIDTextbox(childID);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 10 --> Input to Child name: " + childName);
+		distributionAgencyPage.InputToChildNameTextbox(childName);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 11 --> Input to Child code: " + childAddress);
+		distributionAgencyPage.InputToChildAddressTextbox(childAddress);
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 12 --> Click to Save Button");
+		distributionAgencyPage.clickToSaveButton();
+		
+		log.info("TC_User_06_CreateDistributionAgencyWithExistCode - Step 13 --> Verify Exist Customer Code Message: " + exist_customerEmail_message);
+		verifyEquals(exist_customerEmail_message, distributionAgencyPage.existCustomerMessage());
+		
+		distributionAgencyPage.refreshPage();
+	}
+	
+	@DataProvider
+	public Object[][] getDataCreateCustomerExistEmail(){
+		Object[][] data = ExcelUtils.getTestData("CreateAccountWithExistEmail");
+		return data;
+	}
+	
+	@Test(dataProvider = "getDataCreateCustomerExistEmail")
+	public void TC_User_07_CreateDistributionAgencyWithExistEmail(String email, String name, String code, String address, String group, 
+																String childID, String childName, String childAddress) throws Exception {
+		log.info("******************** TC07 - CREATE NEW CUSTOMER WITH EXIST EMAIL  *********************");
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 01 --> Open Distribution Agency Page");
+		distributionAgencyPage = PageFactoryManager.getDistributionAgencyPage(driver);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 02 --> Click to Create button");
+		distributionAgencyPage.clickToCreateButton();
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 03 --> Fill to email textbox: " + email);
+		distributionAgencyPage.InputToEmailTextbox(email);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 04 --> Fill to name textbox: " + name);
+		distributionAgencyPage.InputToNameTextbox(name);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 05 --> Fill to code textbox: " + code);
+		distributionAgencyPage.InputToCodeTextbox(code);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 06 --> Fill to invoce name textbox: " + name);
+		distributionAgencyPage.InputToInvoiceNameTextbox(name);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 07 --> Fill to address textbox: " + address);
+		distributionAgencyPage.InputToInvoiceAddressTextbox(address);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 08 --> Choose group: " + group);
+		distributionAgencyPage.selectGroup(group);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 09 --> Input to Child code: " + childID);
+		distributionAgencyPage.InputToChildIDTextbox(childID);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 10 --> Input to Child name: " + childName);
+		distributionAgencyPage.InputToChildNameTextbox(childName);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 11 --> Input to Child code: " + childAddress);
+		distributionAgencyPage.InputToChildAddressTextbox(childAddress);
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 12 --> Click to Save Button: ");
+		distributionAgencyPage.clickToSaveButton();
+		
+		log.info("TC_User_07_CreateDistributionAgencyWithExistEmail - Step 13 --> Verify Exist Customer Email Message : " + exist_customerEmail_message);
+		
+		verifyEquals(exist_customerEmail_message, distributionAgencyPage.existCustomerMessage());
 	}
 
 	@AfterClass

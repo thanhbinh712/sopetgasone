@@ -1,20 +1,16 @@
 package pages;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import commons.AbstractPage;
-import pagesUI.DistributionAgencyPageUI;
 import pagesUI.CreateCylinderPageUI;
 
 public class CreateCylinderPage extends AbstractPage {
 	WebDriver driver;
 	
-	public CreateCylinderPage(WebDriver driver_) {
-		this.driver = driver_;
+	public CreateCylinderPage(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	public void sendKeyToCylinderCode(String code) {
@@ -77,4 +73,8 @@ public class CreateCylinderPage extends AbstractPage {
 		return alert.getText();
 	}
 	
+	public String getMessageSuccess() {
+		waitForControlVisible(driver, CreateCylinderPageUI.SUCCESS_MESSAGE);
+		return getTextElement(driver, CreateCylinderPageUI.SUCCESS_MESSAGE);
+	}
 }

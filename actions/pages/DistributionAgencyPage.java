@@ -74,7 +74,7 @@ public class DistributionAgencyPage extends AbstractPage {
 		return getTextElement(driver, DistributionAgencyPageUI.CREATE_SUCCESS_MESSAGE);
 	}
 	
-	public String existCustomerCodeMessage() {
+	public String existCustomerMessage() {
 		waitForControlVisible(driver, DistributionAgencyPageUI.EXISTCODE_MESSAGE);
 		return getTextElement(driver, DistributionAgencyPageUI.EXISTCODE_MESSAGE);
 	}

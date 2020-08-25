@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import commons.PageFactoryManager;
-import pagesUI.HomePageUI;
 import pagesUI.LoginPageUI;
 
 public class LoginPage extends AbstractPage{
@@ -12,8 +11,8 @@ public class LoginPage extends AbstractPage{
 	WebDriver driver;
 	
 	//Page Object constructor which passes the driver context forward
-	public LoginPage(WebDriver driver_) {
-		this.driver = driver_;
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
 	}
 	
 	public String getLoginPageUrl() {
@@ -39,6 +38,11 @@ public class LoginPage extends AbstractPage{
 	public String getLoginFailedMessage() {
 		waitForControlVisible(driver, LoginPageUI.LOGINFAILED_MESSAGE);
 		return getTextElement(driver, LoginPageUI.LOGINFAILED_MESSAGE);
+	}
+	
+	public String getEmptyMessage() {
+		waitForControlVisible(driver, LoginPageUI.EMPTY_MESSAGE);
+		return getTextElement(driver, LoginPageUI.EMPTY_MESSAGE);
 	}
 	
 	public void clearToEmailTextbox() {
