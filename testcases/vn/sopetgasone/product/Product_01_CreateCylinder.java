@@ -2,7 +2,6 @@ package vn.sopetgasone.product;
 
 import org.testng.annotations.Test;
 
-import commons.AbstractPage;
 import commons.AbstractTest;
 import commons.ExcelUtils;
 import commons.PageFactoryManager;
@@ -21,6 +20,7 @@ public class Product_01_CreateCylinder extends AbstractTest {
 	String password = "A123!@#";
     String success_message = "Tạo mới thành công!";
     String existcode_message = "Mã bình đã tồn tại. Vui lòng nhập mã khác!";
+    String emptycode_message = "Không được để trống.";
 
 	private static CreateCylinderPage createCylinderPage;
 	private static LoginPage loginPage;
@@ -33,7 +33,6 @@ public class Product_01_CreateCylinder extends AbstractTest {
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(password);
 		homePage = loginPage.clickToLoginButton();
-		createCylinderPage = homePage.openCreateCylinderPage(driver);
 	}
 	
 	@DataProvider
@@ -45,9 +44,9 @@ public class Product_01_CreateCylinder extends AbstractTest {
 	@Test(dataProvider = "getDataCreateCylinder")
 	public void TC_Product_01_CreateProductSuccess(String code, String type, String color, String valveType, String weight,
 			String verificationDate, String brand) throws Exception {
-		log.info("************* TC01 - CREATE PRODUCT  **************");
+		log.info("************* TC01 - CREATE PRODUCT SUCCESS  **************");
 		log.info("TC_Product_01_CreateProductSuccess - Step 01 --> Open Import Cylinder Page");
-		createCylinderPage = PageFactoryManager.getCreateCylinderPage(driver);
+		createCylinderPage = homePage.openCreateCylinderPage(driver);
 		
 		log.info("TC_Product_01_CreateProductSuccess - Step 02 --> Input to Cylinder Code: " + code);
 		createCylinderPage.sendKeyToCylinderCode(code);
@@ -73,7 +72,10 @@ public class Product_01_CreateCylinder extends AbstractTest {
 		log.info("TC_Product_01_CreateProductSuccess - Step 09 --> Click to Upload Cylinder Button");
 		createCylinderPage.clickToUploadButton();
 		
+		log.info("TC_Product_01_CreateProductSuccess - Step 10 --> Verify success message: " + success_message);
 		verifyEquals(success_message, createCylinderPage.getMessageSuccess());
+		
+		Thread.sleep(3000);
 	}
 
 	@DataProvider
@@ -81,41 +83,61 @@ public class Product_01_CreateCylinder extends AbstractTest {
 		Object[][] data = ExcelUtils.getTestData("CreateWithExistCode");
 		return data;
 	}
- 
+	
 	@Test(dataProvider = "getDataCreateCylinderWithExistCode")
-	public void TC_Product_01_CreateCylinderWithExistCode(String code, String type, String color, String valveType,
+	public void TC_Product_02_CreateCylinderWithEmptyCode(String code, String type, String color, String valveType,
 			String weight, String verificationDate, String brand) throws Exception {
-		log.info("************* TC01 - CREATE PRODUCT  **************");
-		log.info("TC_Product_01_CreateProduct - Step 01 --> Open Import Cylinder Page");
+		log.info("************* TC02 - CREATE PRODUCT WITH EMPTY CODE **************");
+		log.info("TC_Product_02_CreateCylinderWithEmptyCode - Step 01 --> Open Import Cylinder Page");
 		createCylinderPage = homePage.openCreateCylinderPage(driver);
 
-		log.info("TC_Product_01_CreateProduct - Step 02 --> Input to Cylinder Code: " + code);
+		log.info("TC_Product_02_CreateCylinderWithEmptyCode - Step 02 --> Input to Cylinder Code: " + " ");
+		createCylinderPage.sendKeyToCylinderCode(" ");
+
+		log.info("TC_Product_02_CreateCylinderWithEmptyCode - Step 03 --> Select Cylinder Type: " + type);
+		createCylinderPage.selectCylinderType(type);
+		
+		log.info("TC_Product_02_CreateCylinderWithEmptyCode - Step 04 --> Verify empty cylinder code message: " + emptycode_message);
+		verifyEquals(emptycode_message, createCylinderPage.getEmptyMessage());
+		
+		createCylinderPage.refreshPage();
+	}
+ 
+	@Test(dataProvider = "getDataCreateCylinderWithExistCode")
+	public void TC_Product_03_CreateCylinderWithExistCode(String code, String type, String color, String valveType,
+			String weight, String verificationDate, String brand) throws Exception {
+		log.info("************* TC03 - CREATE PRODUCT WITH EXIST CODE  **************");
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 01 --> Open Import Cylinder Page");
+		createCylinderPage = homePage.openCreateCylinderPage(driver);
+
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 02 --> Input to Cylinder Code: " + code);
 		createCylinderPage.sendKeyToCylinderCode(code);
 
-		log.info("TC_Product_01_CreateProduct - Step 03 --> Select Cylinder Type: " + type);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 03 --> Select Cylinder Type: " + type);
 		createCylinderPage.selectCylinderType(type);
 
-		log.info("TC_Product_01_CreateProduct - Step 04 --> Select Color: " + color);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 04 --> Select Color: " + color);
 		createCylinderPage.selectCylinderColor(color);
 
-		log.info("TC_Product_01_CreateProduct - Step 05 --> Select Valve Type: " + valveType);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 05 --> Select Valve Type: " + valveType);
 		createCylinderPage.selectValveType(valveType);
 
-		log.info("TC_Product_01_CreateProduct - Step 06 --> Input to weight textbox: " + weight);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 06 --> Input to weight textbox: " + weight);
 		createCylinderPage.sendKeyToWeight(weight);
 
-		log.info("TC_Product_01_CreateProduct - Step 07 --> Choose verification date: " + verificationDate);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 07 --> Choose verification date: " + verificationDate);
 		createCylinderPage.sendKeyToVerifycationDate(verificationDate);
 
-		log.info("TC_Product_01_CreateProduct - Step 08 --> Select Brand: " + brand);
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 08 --> Select Brand: " + brand);
 		createCylinderPage.selectBrand(brand);
 
-		log.info("TC_Product_01_CreateProduct - Step 09 --> Click to Upload Cylinder Button");
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 09 --> Click to Upload Cylinder Button");
 		createCylinderPage.clickToUploadButton();
 		
-		log.info("TC_Product_01_CreateProduct - Step 10 --> Verify exist cylinder code message");
+		log.info("TC_Product_03_CreateCylinderWithExistCode - Step 10 --> Verify exist cylinder code message : " + existcode_message);
 		verifyEquals(existcode_message, createCylinderPage.getAlertText());
 	}
+	
 	
 	@AfterClass
 	public void afterClass() {

@@ -13,5 +13,5 @@ public class CreateCylinderPageUI {
 	public static final String SAVE_BUTTON = "//div[@id='create-product']//form//button[1]";
 	public static final String CLOSE_BUTTON = "//div[@id='create-product']//div//div//div//button[contains(text(),'Đóng')]";
 	public static final String SUCCESS_MESSAGE = "//div[@class='text']";
-	
+	public static final String EMPTY_MESSAGE = "//span[@class='text-danger']";
 }

@@ -77,4 +77,9 @@ public class CreateCylinderPage extends AbstractPage {
 		waitForControlVisible(driver, CreateCylinderPageUI.SUCCESS_MESSAGE);
 		return getTextElement(driver, CreateCylinderPageUI.SUCCESS_MESSAGE);
 	}
+	
+	public String getEmptyMessage() {
+		waitForControlVisible(driver, CreateCylinderPageUI.EMPTY_MESSAGE);
+		return getTextElement(driver, CreateCylinderPageUI.EMPTY_MESSAGE);
+	}
 }
