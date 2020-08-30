@@ -7,18 +7,33 @@
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-	<!-- <test name="User">
+	<test name="Login">
 		<classes>
-			<class name="vn.sopetgasone.user.User_01_Login" />
-			<class name="vn.sopetgasone.user.User_02_CreateUser" />
-		</classes>
-	</test> -->
-	
-	<test name="Product_03_ImportCylinder">
-		<classes>
-			<!-- <class name="vn.sopetgasone.product.Product_01_CreateCylinder" /> -->
-			<!-- <class name="vn.sopetgasone.product.Product_02_ExportCylinder" /> -->
-			<class name="vn.sopetgasone.product.Product_03_ImportCylinder" />
+			<class name="vn.sopetgasone.login.Login_01_TradeOwnerLogin" />
 		</classes>
 	</test>
+	
+	<!-- <test name="Create new User">
+		<classes>
+			<class name="vn.sopetgasone.newaccount.NewAccount_01_CreateUser" />
+		</classes>
+	</test>
+	
+	<test name="Create new cylinder">
+		<classes>
+			<class name="vn.sopetgasone.newcylinder.NewCylinder_01_CreateCylinder" />
+		</classes>
+	</test>
+	
+	<test name="Trade Owner Export Cylinder">
+		<classes>
+			<class name="vn.sopetgasone.exportcylinder.ExportCylinder_01_TradeOwnerExportCylinder" />
+		</classes>
+	</test>
+	
+	<test name="Distribution Agency Import Cylinder">
+		<classes>
+			<class name="vn.sopetgasone.importcylinder.ImportCylinder_01_DistributionAgencyImportCylinder" />
+		</classes>
+	</test> -->
 </suite> 

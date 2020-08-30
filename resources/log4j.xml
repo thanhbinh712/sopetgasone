@@ -27,7 +27,14 @@
 		</layout>
 	</appender>
 
-	<category name="vn.sopetgasone.user">
+	<category name="vn.sopetgasone.login">
+		<priority value="all" />
+		<appender-ref ref="console" />
+		<appender-ref ref="logfile" />
+		<appender-ref ref="testng" />
+	</category>
+	
+	<category name="vn.sopetgasone.newaccount">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
@@ -35,7 +42,21 @@
 	</category>
 	
 	
-	<category name="vn.sopetgasone.product">
+	<category name="vn.sopetgasone.newcylinder">
+		<priority value="all" />
+		<appender-ref ref="console" />
+		<appender-ref ref="logfile" />
+		<appender-ref ref="testng" />
+	</category>
+	
+	<category name="vn.sopetgasone.exportcylinder">
+		<priority value="all" />
+		<appender-ref ref="console" />
+		<appender-ref ref="logfile" />
+		<appender-ref ref="testng" />
+	</category>
+	
+	<category name="vn.sopetgasone.importcylinder">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />

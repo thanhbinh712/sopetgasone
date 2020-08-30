@@ -1,4 +1,4 @@
-package vn.sopetgasone.product;
+package vn.sopetgasone.exportcylinder;
 
 import org.testng.annotations.Test;
 
@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 
-public class Product_02_ExportCylinder extends AbstractTest {
+public class ExportCylinder_01_TradeOwnerExportCylinder extends AbstractTest {
 	WebDriver driver;
 	String validFilePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Valid Cylinder.txt";
 	String emptyCodefilePath = "D:\\Selenium Webdriver Softwares and Projects\\Softwares\\eclipse-java-2020-06-R-win32-x86_64\\workspace\\sopetgasone\\testcases\\testdata\\Empty Cylinder.txt";
@@ -31,7 +31,7 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	
 	@BeforeClass
 	  public void beforeClass() {
-		log.info("	**********************  OPEN BROWSER  ******************     ");
+		log.info("	**********************  TRADE OWNER EXPORT CYLINDER  ******************     ");
 		driver = openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		loginPage.inputToEmailTextbox(email);
@@ -40,75 +40,76 @@ public class Product_02_ExportCylinder extends AbstractTest {
 	  }
 	
 	@Test
-	  public void TC_Product_04_ExportWithValidFile() throws Exception {
-		  log.info("************* TC04 - EXPORT VALID CYLINDER FILE  **************");
+	  public void TC_Export_01_ExportWithValidFile() throws Exception {
+			Thread.sleep(2000);
+		  log.info("************* TC01 - EXPORT VALID CYLINDER FILE  **************");
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 01 --> Open Export Cylinder Page");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 01 --> Open Export Cylinder Page");
 		  exportCylinderPage = homePage.openExportCylinderPage(driver);
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 02 --> Upload file import with empty cylinder code");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 02 --> Upload file import with empty cylinder code");
 		  exportCylinderPage.sendKeyToExportCylinder(validFilePath); 
 		  
 		  exportCylinderPage.scrollToContinueButton();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 03 --> Click to Continue Button");
-		  exportCylinderPage.clickToContinueButton();
+		  log.info("TC_Export_01_ExportWithValidFile - Step 03 --> Click to Continue Button");
+		  exportCylinderPage.clickToContinueButton2();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 04 --> Click choose driver 001");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 04 --> Click choose driver 001");
 		  exportCylinderPage.selectDriverName();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 05 --> Input to Lisence Plate " + license_plate);
+		  log.info("TC_Export_01_ExportWithValidFile - Step 05 --> Input to Lisence Plate " + license_plate);
 		  exportCylinderPage.inputToLicensePlate(license_plate);
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 06 --> Click choose customer type");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 06 --> Click choose customer type");
 		  exportCylinderPage.selectCustomerType();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 07 --> Click choose customer name");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 07 --> Click choose customer name");
 		  exportCylinderPage.selectCustomerName();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 08 --> Click choose child name");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 08 --> Click choose child name");
 		  exportCylinderPage.selectCustomerChild(customerChild_Name);
 		  
 		  exportCylinderPage.pressENTER();
 		  
 		  exportCylinderPage.scrollToSaveButton();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 09 --> Click save buttton");
+		  log.info("TC_Export_01_ExportWithValidFile - Step 09 --> Click save buttton");
 		  exportCylinderPage.clickToSaveButton();
 		  
-		  log.info("TC_Product_04_ExportWithValidFile - Step 07 --> Verify import success: " + success_message);
+		  log.info("TC_Export_01_ExportWithValidFile - Step 07 --> Verify import success: " + success_message);
 		  verifyEquals(success_message, exportCylinderPage.getMessageSuccess());
 		  
 		  exportCylinderPage.refreshPage();
 	  }
 	
   @Test
-  public void TC_Product_05_ExportWithInvalidCylinder() throws Exception {
-	  log.info("************* TC05 - EXPORT INVALID CYLINDER  **************");
+  public void TC_Export_02_ExportWithInvalidCylinder() throws Exception {
+	  log.info("************* TC02 - EXPORT INVALID CYLINDER  **************");
 	  
-	  log.info("TC_Product_05_ExportWithInvalidCylinder - Step 01 --> Open Export Cylinder Page");
+	  log.info("TC_Export_02_ExportWithInvalidCylinder - Step 01 --> Open Export Cylinder Page");
 	  exportCylinderPage = homePage.openExportCylinderPage(driver);
 	  
-	  log.info("TC_Product_05_ExportWithInvalidCylinder - Step 02 --> Upload file import with invalid cylinder code");
+	  log.info("TC_Export_02_ExportWithInvalidCylinder - Step 02 --> Upload file import with invalid cylinder code");
 	  exportCylinderPage.sendKeyToExportCylinder(invalidCodeFilePath); 
 	
-	  log.info("TC_Product_05_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
+	  log.info("TC_Export_02_ExportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code");
 	  verifyEquals(invalid_message, exportCylinderPage.getMessageInvalidCode());
 	  
 	  exportCylinderPage.refreshPage();
   }
   
   @Test
-  public void TC_Product_06_ExportWithEmptyFile() throws Exception {
-	  log.info("************* TC06 - EXPORT EMPTY CYLINDER FILE  **************");
+  public void TC_Export_03_ExportWithEmptyFile() throws Exception {
+	  log.info("************* TC03 - EXPORT EMPTY CYLINDER FILE  **************");
 	  
-	  log.info("TC_Product_06_ExportWithEmptyFile - Step 01 --> Open Export Cylinder Page");
+	  log.info("TC_Export_03_ExportWithEmptyFile - Step 01 --> Open Export Cylinder Page");
 	  exportCylinderPage = homePage.openExportCylinderPage(driver);
 	  
-	  log.info("TC_Product_06_ExportWithEmptyFile - Step 02 --> Upload file import with empty cylinder code");
+	  log.info("TC_Export_03_ExportWithEmptyFile - Step 02 --> Upload file import with empty cylinder code");
 	  exportCylinderPage.sendKeyToExportCylinder(emptyCodefilePath); 
 	 
-	  log.info("TC_Product_06_ExportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code");
+	  log.info("TC_Export_03_ExportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code");
 	  verifyEquals(empty_message, exportCylinderPage.getMessageEmptyCode());
   }
   

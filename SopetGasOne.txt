@@ -1,17 +1,22 @@
-[INFO] 2020-08-25 19:40:33,524 [Product_03_ImportCylinder] ************* TC07 - IMPORT VALID CYLINDER  ************** 
-[INFO] 2020-08-25 19:40:33,526 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-25 19:40:35,580 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 02 --> Upload file import with empty cylinder code 
-[INFO] 2020-08-25 19:40:36,081 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 03 --> Click to Continue Button 
-[INFO] 2020-08-25 19:40:36,417 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 04 --> Click choose driver 
-[INFO] 2020-08-25 19:40:37,417 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 04 --> Input to license plate 
-[INFO] 2020-08-25 19:40:37,858 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 05 --> Click to Save button 
-[INFO] 2020-08-25 19:40:38,013 [Product_03_ImportCylinder] TC_Product_07_ImportWithValidFile - Step 07 --> Verify import success : Nhập hàng thành công! 
-[INFO] 2020-08-25 19:40:41,746 [Product_03_ImportCylinder] ************* TC08 - IMPORT INVALID CYLINDER  ************** 
-[INFO] 2020-08-25 19:40:41,747 [Product_03_ImportCylinder] TC_Product_08_ImportWithInvalidCylinder - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-25 19:40:42,200 [Product_03_ImportCylinder] TC_Product_08_ImportWithInvalidCylinder - Step 02 --> Upload file import with invalid cylinder code 
-[INFO] 2020-08-25 19:40:42,915 [Product_03_ImportCylinder] TC_Product_08_ImportWithInvalidCylinder - Step 03 --> Verify message failed with invalid cylinder code: Những mã này chưa xuất nên không thể nhập : 
-[INFO] 2020-08-25 19:40:45,125 [Product_03_ImportCylinder] ************* TC07 - IMPORT EMPTY CYLINDER  ************** 
-[INFO] 2020-08-25 19:40:45,126 [Product_03_ImportCylinder] TC_Product_09_ImportWithEmptyFile - Step 01 --> Open Import Cylinder Page 
-[INFO] 2020-08-25 19:40:45,518 [Product_03_ImportCylinder] TC_Product_07_ImportWithEmptyFile - Step 02 --> Upload file import with empty cylinder code 
-[INFO] 2020-08-25 19:40:46,217 [Product_03_ImportCylinder] TC_Product_07_ImportWithEmptyFile - Step 03 --> Verify message failed with invalid cylinder code Không tìm thấy bất kì mã nào 
-[INFO] 2020-08-25 19:40:46,422 [Product_03_ImportCylinder] 	**********************  CLOSE BROWSER  ******************      
+[INFO] 2020-08-31 04:00:27,582 [Login_01_TradeOwnerLogin] 	**********************  LOGIN  ******************      
+[INFO] 2020-08-31 04:00:42,927 [Login_01_TradeOwnerLogin] ************* TC01 - LOGIN WITH VALID EMAIL & PASSWORD  ************** 
+[INFO] 2020-08-31 04:00:42,935 [Login_01_TradeOwnerLogin] TC_Login_01_TradeOwnerLoginSuccess - Step 01 --> Input valid email: thanhbinhtester@dvs.vn 
+[INFO] 2020-08-31 04:00:43,718 [Login_01_TradeOwnerLogin] TC_Login_01_TradeOwnerLoginSuccess - Step 02 --> Input valid password: A123!@# 
+[INFO] 2020-08-31 04:00:43,988 [Login_01_TradeOwnerLogin] TC_Login_01_TradeOwnerLoginSuccess - Step 03 --> Click Button Login  
+[INFO] 2020-08-31 04:00:44,212 [Login_01_TradeOwnerLogin] TC_Login_01_TradeOwnerLoginSuccess - Step 04 --> Seeing name user Thanh Bình Tester 
+[INFO] 2020-08-31 04:00:48,318 [Login_01_TradeOwnerLogin] **************** TC02 - LOGIN WITH INVALID EMAIL  **************** 
+[INFO] 2020-08-31 04:00:48,318 [Login_01_TradeOwnerLogin] TC_Login_02_TradeOwnerLoginInvalidEmail - Step 01 --> Input with invalid email: ttthanhbinhtester@dvs.vn 
+[INFO] 2020-08-31 04:00:48,780 [Login_01_TradeOwnerLogin] TC_Login_02_TradeOwnerLoginInvalidEmail - Step 02 --> Input with valid password: A123!@# 
+[INFO] 2020-08-31 04:00:48,988 [Login_01_TradeOwnerLogin] TC_Login_02_TradeOwnerLoginInvalidEmail - Step 03 --> Click Login Button 
+[INFO] 2020-08-31 04:00:49,109 [Login_01_TradeOwnerLogin] TC_Login_02_TradeOwnerLoginInvalidEmail - Step 04 --> Verify login failed message: Thông tin không chính xác 
+[INFO] 2020-08-31 04:00:49,797 [Login_01_TradeOwnerLogin] **************** TC03 - LOGIN WITH INVALID PASSWORD  **************** 
+[INFO] 2020-08-31 04:00:49,798 [Login_01_TradeOwnerLogin] TC_Login_03_TradeOwnerLoginInvalidPassword - Step 01 --> Input with valid email: thanhbinhtester@dvs.vn 
+[INFO] 2020-08-31 04:00:50,215 [Login_01_TradeOwnerLogin] TC_Login_03_TradeOwnerLoginInvalidPassword - Step 02 --> Input with invalid password: A123!@#qqq 
+[INFO] 2020-08-31 04:00:50,425 [Login_01_TradeOwnerLogin] TC_Login_03_TradeOwnerLoginInvalidPassword - Step 03 --> Click Login Button 
+[INFO] 2020-08-31 04:00:50,541 [Login_01_TradeOwnerLogin] TC_Login_03_TradeOwnerLoginInvalidPassword - Step 04 --> Verify login failed message : Thông tin không chính xác 
+[INFO] 2020-08-31 04:00:51,790 [Login_01_TradeOwnerLogin] **************** TC04 - LOGIN WITH SPACE EMAIL TEXTBOX  **************** 
+[INFO] 2020-08-31 04:00:51,791 [Login_01_TradeOwnerLogin] TC_Login_04_TradeOwnerLoginSpaceEmail - Step 01 --> Input with space email textbox:     
+[INFO] 2020-08-31 04:00:51,987 [Login_01_TradeOwnerLogin] TC_Login_04_TradeOwnerLoginSpaceEmail - Step 02 --> Input with valid password: A123!@# 
+[INFO] 2020-08-31 04:00:52,255 [Login_01_TradeOwnerLogin] TC_Login_04_TradeOwnerLoginSpaceEmail - Step 03 --> Click Login Button 
+[INFO] 2020-08-31 04:00:52,329 [Login_01_TradeOwnerLogin] TC_Login_04_TradeOwnerLoginSpaceEmail - Step 04 --> Verify login failed message: Không được để trống. 
+[INFO] 2020-08-31 04:00:52,443 [Login_01_TradeOwnerLogin] 	**********************  CLOSE BROWSER  ******************      

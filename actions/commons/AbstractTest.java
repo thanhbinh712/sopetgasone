@@ -29,69 +29,54 @@ public class AbstractTest {
 		return driver;
 	}
 	
-//	@AfterMethod
-//	gen = new Generator();
-	//screenshot = new Screenshot(gen, driver);
-//	title = gen.title();
-	//body = gen.body();
-//	public void tearDown(ITestResult testResult) throws IOException {
-//		if (testResult.getStatus() == ITestResult.FAILURE) {
-//			screenshot.takeScreenshot(testResult.getName());
-//		}
-//		driver.quit();
-//	}
-	
 	public int randomNumber() {
 		Random random = new Random();
 		int number = random.nextInt(9999);
 		return number;
 	}
 	
-	protected boolean verifyPassed(boolean condition, boolean flag){
+	protected boolean verifyPassed(boolean condition, boolean flag) {
 		boolean pass = true;
-		if(flag == false) {
+		if (flag == false) {
 			try {
-				if(condition == true) 
+				if (condition == true)
 					log.info("[PASSED]");
 				else
 					log.info("[FAILED]");
 				Assert.assertTrue(condition);
-			}catch(Throwable e) {
+			} catch (Throwable e) {
 				pass = false;
 				Reporter.getCurrentTestResult().setThrowable(e);
-				
 			}
-		}
-		else {
+		} else {
 			Assert.assertTrue(condition);
 		}
 		return pass;
 	}
-	
+
 	protected boolean verifyTrue(boolean condition) {
 		return verifyPassed(condition, false);
 	}
-	
-	protected boolean verifyFailed(boolean condition, boolean flag){
+
+	protected boolean verifyFailed(boolean condition, boolean flag) {
 		boolean pass = true;
-		if(flag == false) {
+		if (flag == false) {
 			try {
-				if(condition == false) 
+				if (condition == false)
 					log.info("[PASSED]");
 				else
 					log.info("[FAILED]");
-				Assert.assertTrue(condition);
-			}catch(Throwable e) {
+				Assert.assertFalse(condition);
+			} catch (Throwable e) {
 				pass = false;
 				Reporter.getCurrentTestResult().setThrowable(e);
 			}
-		}
-		else {
-			Assert.assertTrue(condition);
-		}
+		} else {
+			Assert.assertFalse(condition);
+		} 
 		return pass;
 	}
-	
+
 	protected boolean verifyFalse(boolean condition) {
 		return verifyFailed(condition, false);
 	}
@@ -103,8 +88,7 @@ public class AbstractTest {
 				Assert.assertEquals(actual, expected);
 			}catch(Throwable e) {
 				pass = false;
-				Reporter.getCurrentTestResult().setThrowable(e);
-				
+				Reporter.getCurrentTestResult().setThrowable(e);	
 			}
 		}
 		else {
